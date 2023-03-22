@@ -216,8 +216,9 @@ const Brand_new_profile = ({ children }) => {
   };
 
   useEffect(() => {
+    if(user.email === undefined) return;
     getTransactions();
-  }, []);
+  }, [user]);
   // code to get plan type
   // const [planType, setPlanType] = useState("");
   // const getPlanType = async () => {
