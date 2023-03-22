@@ -203,7 +203,7 @@ const Brand_new_profile = ({ children }) => {
   // code to get transaction history of user
   const [transactions, setTransactions] = useState([]);
   const getTransactions = async () => {
-    axios
+  await  axios
       .get(`${API}/orders/email/${user.email}`)
       .then((res) => {
         setTransactions(res.data);
