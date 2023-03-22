@@ -58,17 +58,17 @@ function Footer() {
             </div>
           </div>
           <div className="mt-2 text-[#3A3A3A]">Copyright 2022 by Dauqu</div>
-          <div className="text-[#3A3A3A]   cursor-pointer md:mt-2 mt-8 flex  md:justify-self-start ">
-            <div className="md:w-[15%] hover:text-[#1773EB]">
+          <div className="text-[#3A3A3A] md:w-[100%] w-[50%]   cursor-pointer md:mt-2 mt-8 flex    ">
+            <div className="md:w-[15%] w-[30%] hover:text-[#1773EB]">
               <FaFacebookF style={{ fontSize: "20px" }} />
             </div>
-            <div className="md:w-[15%] hover:text-[#1363BC]">
+            <div className="md:w-[15%] w-[30%] hover:text-[#1363BC]">
               <FaLinkedinIn style={{ fontSize: "20px" }} />
             </div>
-            <div className="md:w-[15%] hover:text-[#8a3ab9]">
+            <div className="md:w-[15%] w-[30%] hover:text-[#8a3ab9]">
               <FaInstagram style={{ fontSize: "20px" }} />
             </div>
-            <div className="md:w-[15%] hover:text-[#33A9EC]">
+            <div className="md:w-[15%] w-[30%] hover:text-[#33A9EC]">
               <AiOutlineTwitter style={{ fontSize: "20px" }} />
             </div>
           </div>
