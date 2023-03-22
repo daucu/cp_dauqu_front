@@ -239,11 +239,7 @@ const Brand_new_profile = ({ children }) => {
       <div className="w-full md:flex">
         <div className="w-[250px]">
           <div className="w-[250px] overflow-x:-hidden bg-[#fff] mt-16 border h-[100vh] fixed">
-            <div className="w-full px-[24px] flex items-center">
-              <h1 className="text-[21px] min-h-[48px] text-transparent font-semibold bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-500 flex items-center">
-                123 Auc admin panel
-              </h1>
-            </div>
+            <div className="w-full px-[24px] flex items-center"></div>
             <hr className="border" />
             <div className="py-[10px] ">
               <ul className="w-full ">
