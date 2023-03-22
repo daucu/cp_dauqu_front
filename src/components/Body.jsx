@@ -65,15 +65,15 @@ import { API } from "./Constant";
 import { Link } from "react-router-dom";
 
 function Body() {
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
-  useEffect(() => {
-    scrollToTop();
-  }, []);
+  // const scrollToTop = () => {
+  //   window.scrollTo({
+  //     top: 0,
+  //     behavior: "smooth",
+  //   });
+  // };
+  // useEffect(() => {
+  //   scrollToTop();
+  // }, []);
 
   const [plans, setPlans] = useState([]);
   const handlePlans = async () => {
@@ -606,7 +606,7 @@ function Body() {
                   </div>
                   <div className="ml-2">
                     {/* {plan.plan_info_two} */}
-                    Unlimited database account
+                    Generate free domain
                   </div>
                 </div>
                 <div className="text-[#383838] flex items-center  font-semibold text-left mt-4">
@@ -615,7 +615,7 @@ function Body() {
                   </div>
                   <div className="ml-2">
                     {/* {plan.plan_info_three} */}
-                    Free SSL Support
+                    File Manager
                   </div>
                 </div>
                 <div className="text-[#383838] flex items-center  font-semibold text-left mt-4">
@@ -624,7 +624,97 @@ function Body() {
                   </div>
                   <div className="ml-2">
                     {/* {plan.plan_info_four} */}
-                    Support Multiple Languages
+                    All Database support
+                  </div>
+                </div>
+                <div className="text-[#383838] flex items-center  font-semibold text-left mt-4">
+                  <div className="">
+                    <GoCheck />
+                  </div>
+                  <div className="ml-2">
+                    {/* {plan.plan_info_four} */}
+                    Free backup
+                  </div>
+                </div>
+                <div className="text-[#383838] flex items-center  font-semibold text-left mt-4">
+                  <div className="">
+                    <GoCheck />
+                  </div>
+                  <div className="ml-2">
+                    {/* {plan.plan_info_four} */}
+                    All language support
+                  </div>
+                </div>
+                <div className="text-[#383838] flex items-center  font-semibold text-left mt-4">
+                  <div className="">
+                    <GoCheck />
+                  </div>
+                  <div className="ml-2">
+                    {/* {plan.plan_info_four} */}
+                    Frontend & Backend deployment
+                  </div>
+                </div>
+                <div className="text-[#383838] flex items-center  font-semibold text-left mt-4">
+                  <div className="">
+                    <GoCheck />
+                  </div>
+                  <div className="ml-2">
+                    {/* {plan.plan_info_four} */}
+                    Web terminal
+                  </div>
+                </div>
+                <div className="text-[#383838] flex items-center  font-semibold text-left mt-4">
+                  <div className="">
+                    <GoCheck />
+                  </div>
+                  <div className="ml-2">
+                    {/* {plan.plan_info_four} */}
+                    Free SSL support
+                  </div>
+                </div>
+                <div className="text-[#383838] flex items-center  font-semibold text-left mt-4">
+                  <div className="">
+                    <GoCheck />
+                  </div>
+                  <div className="ml-2">
+                    {/* {plan.plan_info_four} */}
+                    Real Time Analysis
+                  </div>
+                </div>
+                <div className="text-[#383838] flex items-center  font-semibold text-left mt-4">
+                  <div className="">
+                    <GoCheck />
+                  </div>
+                  <div className="ml-2">
+                    {/* {plan.plan_info_four} */}
+                    Web Mail Support
+                  </div>
+                </div>
+                <div className="text-[#383838] flex items-center  font-semibold text-left mt-4">
+                  <div className="">
+                    <GoCheck />
+                  </div>
+                  <div className="ml-2">
+                    {/* {plan.plan_info_four} */}
+                    Online file editor
+                  </div>
+                </div>
+                <div className="text-[#383838] flex items-center  font-semibold text-left mt-4">
+                  <div className="">
+                    <GoCheck />
+                  </div>
+                  <div className="ml-2">
+                    {/* {plan.plan_info_four} */}
+                    Proxy management
+                  </div>
+                </div>
+                <div className="text-[#383838] flex items-center  font-semibold text-left mt-4">
+                  <div className="">
+                    <GoCheck />
+                  </div>
+                  <div className="ml-2">
+                    {/* {plan.plan_info_four} */}
+                    Docker management
                   </div>
                 </div>
                 {/* <div className="text-[#383838] flex items-center  font-semibold text-left mt-4">
@@ -684,7 +774,7 @@ function Body() {
                   </div>
                   <div className="ml-2">
                     {/* {plan.plan_info_two} */}
-                    Unlimited database account
+                    Generate free domain
                   </div>
                 </div>
                 <div className="text-[#383838] flex items-center  font-semibold text-left mt-4">
@@ -693,7 +783,7 @@ function Body() {
                   </div>
                   <div className="ml-2">
                     {/* {plan.plan_info_three} */}
-                    Free SSL Support
+                    File Manager
                   </div>
                 </div>
                 <div className="text-[#383838] flex items-center  font-semibold text-left mt-4">
@@ -702,7 +792,97 @@ function Body() {
                   </div>
                   <div className="ml-2">
                     {/* {plan.plan_info_four} */}
-                    Support Multiple Languages
+                    All Database support
+                  </div>
+                </div>
+                <div className="text-[#383838] flex items-center  font-semibold text-left mt-4">
+                  <div className="">
+                    <GoCheck />
+                  </div>
+                  <div className="ml-2">
+                    {/* {plan.plan_info_four} */}
+                    Free backup
+                  </div>
+                </div>
+                <div className="text-[#383838] flex items-center  font-semibold text-left mt-4">
+                  <div className="">
+                    <GoCheck />
+                  </div>
+                  <div className="ml-2">
+                    {/* {plan.plan_info_four} */}
+                    All language support
+                  </div>
+                </div>
+                <div className="text-[#383838] flex items-center  font-semibold text-left mt-4">
+                  <div className="">
+                    <GoCheck />
+                  </div>
+                  <div className="ml-2">
+                    {/* {plan.plan_info_four} */}
+                    Frontend & Backend deployment
+                  </div>
+                </div>
+                <div className="text-[#383838] flex items-center  font-semibold text-left mt-4">
+                  <div className="">
+                    <GoCheck />
+                  </div>
+                  <div className="ml-2">
+                    {/* {plan.plan_info_four} */}
+                    Web terminal
+                  </div>
+                </div>
+                <div className="text-[#383838] flex items-center  font-semibold text-left mt-4">
+                  <div className="">
+                    <GoCheck />
+                  </div>
+                  <div className="ml-2">
+                    {/* {plan.plan_info_four} */}
+                    Free SSL support
+                  </div>
+                </div>
+                <div className="text-[#383838] flex items-center  font-semibold text-left mt-4">
+                  <div className="">
+                    <GoCheck />
+                  </div>
+                  <div className="ml-2">
+                    {/* {plan.plan_info_four} */}
+                    Real Time Analysis
+                  </div>
+                </div>
+                <div className="text-[#383838] flex items-center  font-semibold text-left mt-4">
+                  <div className="">
+                    <GoCheck />
+                  </div>
+                  <div className="ml-2">
+                    {/* {plan.plan_info_four} */}
+                    Web Mail Support
+                  </div>
+                </div>
+                <div className="text-[#383838] flex items-center  font-semibold text-left mt-4">
+                  <div className="">
+                    <GoCheck />
+                  </div>
+                  <div className="ml-2">
+                    {/* {plan.plan_info_four} */}
+                    Online file editor
+                  </div>
+                </div>
+                <div className="text-[#383838] flex items-center  font-semibold text-left mt-4">
+                  <div className="">
+                    <GoCheck />
+                  </div>
+                  <div className="ml-2">
+                    {/* {plan.plan_info_four} */}
+                    Proxy management
+                  </div>
+                </div>
+                <div className="text-[#383838] flex items-center  font-semibold text-left mt-4">
+                  <div className="">
+                    <GoCheck />
+                  </div>
+                  <div className="ml-2">
+                    {/* {plan.plan_info_four} */}
+                    Docker management
                   </div>
                 </div>
                 {/* <div className="text-[#383838] flex items-center  font-semibold text-left mt-4">
@@ -761,7 +941,7 @@ function Body() {
                   </div>
                   <div className="ml-2">
                     {/* {plan.plan_info_two} */}
-                    Unlimited database account
+                    Generate free domain
                   </div>
                 </div>
                 <div className="text-[#383838] flex items-center  font-semibold text-left mt-4">
@@ -770,7 +950,7 @@ function Body() {
                   </div>
                   <div className="ml-2">
                     {/* {plan.plan_info_three} */}
-                    Free SSL Support
+                    File Manager
                   </div>
                 </div>
                 <div className="text-[#383838] flex items-center  font-semibold text-left mt-4">
@@ -779,7 +959,97 @@ function Body() {
                   </div>
                   <div className="ml-2">
                     {/* {plan.plan_info_four} */}
-                    Support Multiple Languages
+                    All Database support
+                  </div>
+                </div>
+                <div className="text-[#383838] flex items-center  font-semibold text-left mt-4">
+                  <div className="">
+                    <GoCheck />
+                  </div>
+                  <div className="ml-2">
+                    {/* {plan.plan_info_four} */}
+                    Free backup
+                  </div>
+                </div>
+                <div className="text-[#383838] flex items-center  font-semibold text-left mt-4">
+                  <div className="">
+                    <GoCheck />
+                  </div>
+                  <div className="ml-2">
+                    {/* {plan.plan_info_four} */}
+                    All language support
+                  </div>
+                </div>
+                <div className="text-[#383838] flex items-center  font-semibold text-left mt-4">
+                  <div className="">
+                    <GoCheck />
+                  </div>
+                  <div className="ml-2">
+                    {/* {plan.plan_info_four} */}
+                    Frontend & Backend deployment
+                  </div>
+                </div>
+                <div className="text-[#383838] flex items-center  font-semibold text-left mt-4">
+                  <div className="">
+                    <GoCheck />
+                  </div>
+                  <div className="ml-2">
+                    {/* {plan.plan_info_four} */}
+                    Web terminal
+                  </div>
+                </div>
+                <div className="text-[#383838] flex items-center  font-semibold text-left mt-4">
+                  <div className="">
+                    <GoCheck />
+                  </div>
+                  <div className="ml-2">
+                    {/* {plan.plan_info_four} */}
+                    Free SSL support
+                  </div>
+                </div>
+                <div className="text-[#383838] flex items-center  font-semibold text-left mt-4">
+                  <div className="">
+                    <GoCheck />
+                  </div>
+                  <div className="ml-2">
+                    {/* {plan.plan_info_four} */}
+                    Real Time Analysis
+                  </div>
+                </div>
+                <div className="text-[#383838] flex items-center  font-semibold text-left mt-4">
+                  <div className="">
+                    <GoCheck />
+                  </div>
+                  <div className="ml-2">
+                    {/* {plan.plan_info_four} */}
+                    Web Mail Support
+                  </div>
+                </div>
+                <div className="text-[#383838] flex items-center  font-semibold text-left mt-4">
+                  <div className="">
+                    <GoCheck />
+                  </div>
+                  <div className="ml-2">
+                    {/* {plan.plan_info_four} */}
+                    Online file editor
+                  </div>
+                </div>
+                <div className="text-[#383838] flex items-center  font-semibold text-left mt-4">
+                  <div className="">
+                    <GoCheck />
+                  </div>
+                  <div className="ml-2">
+                    {/* {plan.plan_info_four} */}
+                    Proxy management
+                  </div>
+                </div>
+                <div className="text-[#383838] flex items-center  font-semibold text-left mt-4">
+                  <div className="">
+                    <GoCheck />
+                  </div>
+                  <div className="ml-2">
+                    {/* {plan.plan_info_four} */}
+                    Docker management
                   </div>
                 </div>
                 {/* <div className="text-[#383838] flex items-center  font-semibold text-left mt-4">
