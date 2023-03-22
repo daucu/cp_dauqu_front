@@ -204,7 +204,7 @@ const Brand_new_profile = ({ children }) => {
   const [transactions, setTransactions] = useState([]);
   const getTransactions = async () => {
     axios
-      .get(`${API}/orders/email/info@dauqu.com`)
+      .get(`${API}/orders/email/${user.email}`)
       .then((res) => {
         setTransactions(res.data);
         console.log(res.data);
