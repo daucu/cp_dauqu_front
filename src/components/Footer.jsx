@@ -53,10 +53,25 @@ function Footer() {
               Dauqu
             </div>
             <div className="text-[#3A3A3A] ">
-              Dauqu is a cloud based platform that allows you to deploy your app in minutes.
+              Dauqu is a cloud based platform that allows you to deploy your app
+              in minutes.
             </div>
           </div>
-          <div className="mt-10 text-[#3A3A3A]">Copyright 2022 by Dauqu</div>
+          <div className="mt-2 text-[#3A3A3A]">Copyright 2022 by Dauqu</div>
+          <div className="text-[#3A3A3A]   cursor-pointer md:mt-2 mt-8 flex  md:justify-self-start ">
+            <div className="md:w-[15%] hover:text-[#1773EB]">
+              <FaFacebookF style={{ fontSize: "20px" }} />
+            </div>
+            <div className="md:w-[15%] hover:text-[#1363BC]">
+              <FaLinkedinIn style={{ fontSize: "20px" }} />
+            </div>
+            <div className="md:w-[15%] hover:text-[#8a3ab9]">
+              <FaInstagram style={{ fontSize: "20px" }} />
+            </div>
+            <div className="md:w-[15%] hover:text-[#33A9EC]">
+              <AiOutlineTwitter style={{ fontSize: "20px" }} />
+            </div>
+          </div>
         </div>
         <div className="md:w-[20%] text-left  md:my-0 ">
           <div className="text-[25px] items-center mt-2 text-[#3A3A3A] font-semibold">
@@ -103,28 +118,14 @@ function Footer() {
           </div>
           <div className="">
             <div className="text-[#3A3A3A]  cursor-pointer  mt-2">
-              <b>Address: &nbsp;</b> 809, 8th Floor, Pearls Best Heights 1,
-              NSP, Pitampura, New Delhi-110034
+              <b>Address: &nbsp;</b> 809, 8th Floor, Pearls Best Heights 1, NSP,
+              Pitampura, New Delhi-110034
             </div>
             <div className="text-[#3A3A3A]  cursor-pointer mt-2">
               <b>Email: &nbsp;</b>info@dauqu.com
             </div>
             <div className="text-[#3A3A3A]  cursor-pointer mt-2">
               <b>Phone: &nbsp;</b>+91 9369390970
-            </div>
-            <div className="text-[#3A3A3A]  cursor-pointer md:mt-2 mt-8 flex items-center md:justify-self-start justify-evenly">
-              <div className="md:w-[15%] hover:text-[#1773EB]">
-                <FaFacebookF style={{ fontSize: "20px" }} />
-              </div>
-              <div className="md:w-[15%] hover:text-[#1363BC]">
-                <FaLinkedinIn style={{ fontSize: "20px" }} />
-              </div>
-              <div className="md:w-[15%] hover:text-[#8a3ab9]">
-                <FaInstagram style={{ fontSize: "20px" }} />
-              </div>
-              <div className="md:w-[15%] hover:text-[#33A9EC]">
-                <AiOutlineTwitter style={{ fontSize: "20px" }} />
-              </div>
             </div>
           </div>
         </div>

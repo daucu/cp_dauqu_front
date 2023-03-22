@@ -4,7 +4,7 @@ import "../assets/css/table.css";
 //icons
 import { CgProfile } from "react-icons/cg";
 import { BiBuildings, BiCodeCurly } from "react-icons/bi";
-import { FiGithub } from "react-icons/fi";
+import { FiGithub, FiPower } from "react-icons/fi";
 import { MdOutlineSecurity } from "react-icons/md";
 import { RiMoneyDollarCircleLine, RiSecurePaymentLine } from "react-icons/ri";
 import { AiOutlineDollarCircle, AiOutlineHome } from "react-icons/ai";
@@ -72,6 +72,13 @@ const Brand_new_profile = ({ children }) => {
     {
       id: 6,
       tabTitle: "Security",
+      tabIcon: <MdOutlineSecurity size={20} />,
+      tabClass: "myCustomClass",
+      tabClicked: false,
+    },
+    {
+      id: 7,
+      tabTitle: "Logout",
       tabIcon: <MdOutlineSecurity size={20} />,
       tabClass: "myCustomClass",
       tabClicked: false,
@@ -166,6 +173,26 @@ const Brand_new_profile = ({ children }) => {
         console.log(err);
         toast.error(err.response.data.message);
       });
+  };
+
+  // code to logout user
+  const HandleLogout = async () => {
+    // alert prompt to confirm logout
+    const confirm = window.confirm("Are you sure you want to logout?");
+    if (!confirm) return;
+
+    try {
+      const response = await axios.get(`${API}/logout`, {
+        withCredentials: true,
+      });
+      console.log(response);
+      toast.success(response.data.message);
+      setTimeout(() => {
+        window.location.href = "/";
+      }, 2000);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -296,6 +323,20 @@ const Brand_new_profile = ({ children }) => {
                       <MdOutlineSecurity size={20} />
                     </div>
                     <div className="text-[18px] ">Security</div>
+                  </div>
+                </li>
+                <li onClick={() => HandleLogout()}>
+                  <div
+                    className={
+                      active === 8
+                        ? "flex justify-start items-center my-[10px] h-[35px] px-[15px] cursor-pointer font-semibold  bg-[#165461] text-white"
+                        : "flex justify-start items-center my-[10px] h-[35px] px-[15px] cursor-pointer font-semibold"
+                    }
+                  >
+                    <div className="mr-[10px]">
+                      <FiPower size={20} />
+                    </div>
+                    <div className="text-[18px] ">Logout</div>
                   </div>
                 </li>
               </ul>

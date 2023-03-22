@@ -124,6 +124,12 @@ function Header() {
                   <li className="btn btn-ghost  text-[white] hover:cursor-pointer p-2  ">
                     <Link to="/">Home</Link>
                   </li>
+                  <li className="btn btn-ghost  text-[white] hover:cursor-pointer p-2  ">
+                    <Link to="/">About us</Link>
+                  </li>
+                  <li className="btn btn-ghost  text-[white] hover:cursor-pointer p-2  ">
+                    <Link to="/">Pricing</Link>
+                  </li>
 
                   <li
                     className="btn btn-ghost text-[white] hover:cursor-pointer p-2   "
