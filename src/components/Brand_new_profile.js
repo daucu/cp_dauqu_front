@@ -121,7 +121,7 @@ const Brand_new_profile = ({ children }) => {
         withCredentials: true,
       });
       setUser(response.data.data);
-      console.log(response);
+      console.log(response.data.data);
       if (response.data.status !== "success") {
         navigate("/login");
       }
@@ -203,8 +203,9 @@ const Brand_new_profile = ({ children }) => {
   // code to get transaction history of user
   const [transactions, setTransactions] = useState([]);
   const getTransactions = async () => {
-  await  axios
-      .get(`${API}/orders/email/${user.email}`)
+    const F_email = user.email;
+    await axios
+      .get(`${API}/orders/email/${F_email}`)
       .then((res) => {
         setTransactions(res.data);
         console.log(res.data);
@@ -213,7 +214,7 @@ const Brand_new_profile = ({ children }) => {
         console.log(err);
       });
   };
- 
+
   useEffect(() => {
     getTransactions();
   }, []);
