@@ -11,7 +11,7 @@ import { AiOutlineDollarCircle, AiOutlineHome } from "react-icons/ai";
 import { IoIosPersonAdd } from "react-icons/io";
 
 import Profile_information from "./Profile_information";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import Github_information from "./Github_information";
 
 import { API } from "./Constant";
@@ -102,10 +102,7 @@ const Brand_new_profile = ({ children }) => {
     );
   };
 
-  const navigate = (id) => {
-    setActive(id);
-  };
-
+  const navigate = useNavigate();
   // ===========for personal information page  start
   const [user, setUser] = useState("");
 
@@ -124,9 +121,13 @@ const Brand_new_profile = ({ children }) => {
         withCredentials: true,
       });
       setUser(response.data.data);
-      console.log(response.data.data);
+      console.log(response);
+      if (response.data.status !== "success") {
+        navigate("/login");
+      }
     } catch (error) {
-      // console.log(error);
+      console.log(error);
+      navigate("/login");
     }
   }
   React.useEffect(() => {
