@@ -216,6 +216,7 @@ const Brand_new_profile = ({ children }) => {
   };
 
   useEffect(() => {
+    console.log("changes");
     if(user.email === undefined) return;
     getTransactions();
   }, [user]);
