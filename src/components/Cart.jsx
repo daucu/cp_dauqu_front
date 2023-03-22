@@ -118,7 +118,7 @@ function Cart() {
         notif();
         setPaypalPaymentSuccess(true);
         setTimeout(() => {
-          window.location.href = "/payment-success";
+          // window.location.href = "/payment-success";
         }, [3000]);
       })
       .catch((err) => {
@@ -150,7 +150,7 @@ function Cart() {
     }
     //  var amount = paypal_payment;
     var options = {
-      key: "rzp_test_fYtFrx227DT8xU", // Enter the Key ID generated from the Dashboard
+      key: "rzp_test_0K0pEnlGiYh9G3", // Enter the Key ID generated from the Dashboard
       amount: Number(cart.plan_price * 100 * 80),
       currency: "INR",
       description: "Acme Corp",
@@ -162,7 +162,7 @@ function Cart() {
 
       handler: function (response) {
         // alert(response.razorpay_payment_id);
-        // console.log(response);
+        console.log(response);
         axios
           .post(`${API}/orders`, {
             // generate order id randomly
@@ -187,7 +187,7 @@ function Cart() {
             notif();
             setPaypalPaymentSuccess(true);
             setTimeout(() => {
-              window.location.href = "/payment-success";
+              // window.location.href = "/payment-success";
             }, [3000]);
           })
           .catch((err) => {

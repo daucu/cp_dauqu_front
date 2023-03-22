@@ -8,8 +8,11 @@ import axios from "axios";
 import { API } from "./Constant";
 import { CountryDropdown } from "react-country-region-selector";
 import { toast } from "react-toastify";
+import { motion } from "framer-motion";
 
 function Footer() {
+  const [display, setDisplay] = useState(false);
+  const [loading, setLoading] = useState(false);
   // code to send email to backend
   const [email, setEmail] = useState("");
   const [firstname, setFirstname] = useState("");
@@ -17,7 +20,12 @@ function Footer() {
 
   const [country, setCountry] = useState("");
 
+  const handleDisplay = (e) => {
+    setDisplay(true);
+  };
+
   const handleSubmit = (e) => {
+    setLoading(true);
     e.preventDefault();
     axios
       .post(`${API}/email_newsletter`, {
@@ -28,6 +36,10 @@ function Footer() {
       })
       .then((res) => {
         console.log(res);
+        if (res.status === 201) {
+          setLoading(false);
+          setDisplay(false);
+        }
         toast.success(res.data.message);
         setTimeout(() => {
           setEmail("");
@@ -38,13 +50,8 @@ function Footer() {
       })
       .catch((err) => {
         console.log(err);
+        setLoading(false);
         toast.error(err.response.data);
-        setTimeout(() => {
-          setEmail("");
-          setFirstname("");
-          setLastname("");
-          setCountry("");
-        }, [2000]);
       });
   };
 
@@ -68,7 +75,7 @@ function Footer() {
           Enter your email to subscribe to our latest updates and events
         </div>
         <div className="flex justify-center mt-8 ">
-          <div className="w-full">
+          <div className="w-full" onClick={handleDisplay}>
             <input
               type="email"
               placeholder="Email address"
@@ -78,50 +85,81 @@ function Footer() {
             />
           </div>
           <div className="">
-            <button
-              className="arrowbtn bg-[#165461] lg:w-[150px] md:w-[100px] sm:w-[85px] min-w-[70px] flex justify-center hover:sha"
-              onClick={handleSubmit}
-            >
-              <BsArrowUpRight
-                style={{
-                  color: "white",
-                  fontSize: "42px",
-                  padding: "2px",
-                  textAlign: "center",
-                }}
-              />
-            </button>
+            {loading === true ? (
+              <button
+                className="arrowbtn bg-[#165461] lg:w-[150px] md:w-[100px] sm:w-[85px] min-w-[70px] flex justify-center hover:sha"
+                disabled
+              >
+                <div className="flex items-center p-[5px] justify-center">
+                  <div
+                    className="inline-block h-8 w-8 text-white     animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
+                    role="status"
+                  >
+                    <span className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">
+                      Loading...
+                    </span>
+                  </div>
+                </div>
+              </button>
+            ) : (
+              <>
+                <button
+                  className="arrowbtn bg-[#165461] lg:w-[150px] md:w-[100px] sm:w-[85px] min-w-[70px] flex justify-center hover:sha"
+                  onClick={handleSubmit}
+                >
+                  <BsArrowUpRight
+                    style={{
+                      color: "white",
+                      fontSize: "42px",
+                      padding: "2px",
+                      textAlign: "center",
+                    }}
+                  />
+                </button>
+              </>
+            )}
           </div>
         </div>
-        <div>
-          <div className="mt-8   md:flex items-center justify-between   ">
-            <div className="md:w-[45%] w-[100%]">
-              <input
-                type="text"
-                className="border bg-[#FFFFFF] border-[#9B9B9B] rounded w-full md:w-[100%]"
-                placeholder="First Name"
-                value={firstname}
-                onChange={(e) => setFirstname(e.target.value)}
+        {display === true ? (
+          <motion.div
+            initial={{ y: -10, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: -10, opacity: 0 }}
+            transition={{ duration: 0.2, stiffness: 500 }}
+            style={{
+              width: "100%",
+              height: "100%",
+            }}
+          >
+            <div className="mt-8   md:flex items-center justify-between   ">
+              <div className="md:w-[45%] w-[100%]">
+                <input
+                  type="text"
+                  className="border bg-[#FFFFFF] border-[#9B9B9B] rounded w-full md:w-[100%]"
+                  placeholder="First Name"
+                  value={firstname}
+                  onChange={(e) => setFirstname(e.target.value)}
+                />
+              </div>
+              <div className="md:w-[45%] w-[100%]  md:mt-0 mt-8">
+                <input
+                  type="text"
+                  className="border bg-[#FFFFFF] border-[#9B9B9B] rounded w-full md:w-[100%]"
+                  placeholder="Last Name"
+                  value={lastname}
+                  onChange={(e) => setLastname(e.target.value)}
+                />
+              </div>
+            </div>
+            <div className="w-full mt-8">
+              <CountryDropdown
+                className="border bg-[#FFFFFF] border-[#9B9B9B] rounded w-full"
+                value={country}
+                onChange={(val) => setCountry(val)}
               />
             </div>
-            <div className="md:w-[45%] w-[100%]  md:mt-0 mt-8">
-              <input
-                type="text"
-                className="border bg-[#FFFFFF] border-[#9B9B9B] rounded w-full md:w-[100%]"
-                placeholder="Last Name"
-                value={lastname}
-                onChange={(e) => setLastname(e.target.value)}
-              />
-            </div>
-          </div>
-          <div className="w-full mt-8">
-            <CountryDropdown
-              className="border bg-[#FFFFFF] border-[#9B9B9B] rounded w-full"
-              value={country}
-              onChange={(val) => setCountry(val)}
-            />
-          </div>
-        </div>
+          </motion.div>
+        ) : null}
       </div>
       <div className="bg-[rgb(255,255,255)] flex flex-col text-center md:flex-row  md:items-start  m-auto xl:p-8  my-6    justify-evenly ">
         <div className="md:w-[20%] text-left my-5 md:my-0">

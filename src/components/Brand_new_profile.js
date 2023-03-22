@@ -19,6 +19,9 @@ import axios from "axios";
 import trustimg from "../assets/images/trust.png";
 import { toast } from "react-toastify";
 import { GrTransaction } from "react-icons/gr";
+import { ImUserTie } from "react-icons/im";
+import { FaDollarSign } from "react-icons/fa";
+import { GiDiamondTrophy, GiMoneyStack } from "react-icons/gi";
 
 const Brand_new_profile = ({ children }) => {
   const [old_password, setOld_password] = useState("");
@@ -347,26 +350,96 @@ const Brand_new_profile = ({ children }) => {
 
         <div className={active === 1 ? "grow shrink pt-16" : "hidden"}>
           {/* =============profile information start============ */}
-          <div className="p-6 sm:p-10 w-full  ">
-            <div className="p-3 px-6  bg-gradient-to-b from-[#A5C5EE] to-white rounded-md">
-              <div className="flex justify-start items-center w-full">
-                <div className="lg:w-[110px] lg-h-[110px] w-full h-[100px] w-[100px] shrink-0 mr-2">
-                  <img
-                    src={trustimg}
-                    alt=""
-                    className="rounded-full mr-2 w-full object-cover"
-                  />
+          <div className="p-2 sm:p-8 w-full  ">
+            <div className="p-3 px-2  rounded-md">
+              <div className="flex justify-between px-2 items-center w-full">
+                <div className="flex w-1/2 ">
+                  <div className="bg-[#28C270] w-[50px] h-[50px] flex rounded-md justify-center items-center ">
+                    <ImUserTie className="text-white text-2xl" />
+                  </div>
+                  <div className="ml-[20px]">
+                    <h1 className="text-xl font-semibold ">Profile</h1>
+                    <p className="font-semibold">Data</p>
+                  </div>
                 </div>
                 <div>
-                  <h1 className="text-xl sm:text-3xl font-bold">
-                    Personal Information
-                  </h1>
+                  <button className="btn btn-sm  rounded-none">
+                    Make Payment
+                  </button>
+                </div>
+              </div>
+              <hr className="my-2" />
+              <div className="md:flex items-center md:mt-8 justify-between ">
+                <div className="p-2 border w-[300px]  ">
+                  <div className="flex items-center justify-between">
+                    <div className="text-[#333] font-semibold text-[20px]">
+                      Current Balance
+                    </div>
+                    <div>
+                      <AiOutlineDollarCircle size={25} />
+                    </div>
+                  </div>
+                  <hr className="my-2" />
+                  <div>
+                    <div
+                      className="w-[180px]  p-2 text-[30px]  font-bold text-left  "
+                      style={{
+                        background:
+                          "linear-gradient(to right, #b2ff42 0%, #0d8773 100%)",
+                        WebkitBackgroundClip: "text",
+                        WebkitTextFillColor: "transparent",
+                      }}
+                    >
+                      $333
+                    </div>
+                  </div>
+                </div>
+                <div className="p-2 border w-[300px]  ">
+                  <div className="flex items-center justify-between">
+                    <div className="text-[#333] font-semibold text-[20px]">
+                      Rewards
+                    </div>
+                    <div>
+                      <GiDiamondTrophy size={25} />
+                    </div>
+                  </div>
+                  <hr className="my-2" />
+                  <div>
+                    <div
+                      className="w-[180px]  p-2 text-[30px]  font-bold text-left  "
+                      style={{
+                        background:
+                          "linear-gradient(to right, #b2ff42 0%, #0d8773 100%)",
+                        WebkitBackgroundClip: "text",
+                        WebkitTextFillColor: "transparent",
+                      }}
+                    >
+                      $100
+                    </div>
+                  </div>
+                </div>
+                <div className="p-2 border w-[300px]  ">
+                  <div className="flex items-center justify-between">
+                    <div className="text-[#333] font-semibold text-[20px]">
+                      Last Debited
+                    </div>
+                    <div>
+                      <GiMoneyStack size={25} />
+                    </div>
+                  </div>
+                  <hr className="my-2" />
+                  <div>
+                    <div className="w-[180px]  p-2 text-[30px] text-red-600 font-bold text-left  ">
+                      $14
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* =========input fields start==== */}
-            <div className=" md:flex lg:flex">
+
+            <div className=" md:flex mt-12 lg:flex">
               <div className="mt-4 w-full px-4">
                 <div className="font-semibold">Uniquekey</div>
                 <div>
@@ -455,9 +528,15 @@ const Brand_new_profile = ({ children }) => {
                 className="w-[100%] h-[100%]"
               />
             </div>
-            <div className="md:text-gray-600 font-bold md:text-[30px] text-[20px]">We are working on this page</div>
-            <div className="md:text-gray-600 font-bold md:text-[27px] text-[19px]">This will be available soon</div>
-            <div className="md:text-gray-600 font-bold md:text-[22px] text-[17px] md:mt-8">We will notify you....</div>
+            <div className="md:text-gray-600 font-bold md:text-[30px] text-[20px]">
+              We are working on this page
+            </div>
+            <div className="md:text-gray-600 font-bold md:text-[27px] text-[19px]">
+              This will be available soon
+            </div>
+            <div className="md:text-gray-600 font-bold md:text-[22px] text-[17px] md:mt-8">
+              We will notify you....
+            </div>
           </div>
           {/* =========github information end here========= */}
         </div>

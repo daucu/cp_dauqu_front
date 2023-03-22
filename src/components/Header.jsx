@@ -219,38 +219,49 @@ function Header() {
               </div>
             </div> */}
             {clipboard ? (
-              <motion.div
-                initial={{ y: -10, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                exit={{ y: -10, opacity: 0 }}
-                transition={{ duration: 0.7, stiffness: 500 }}
-                className="mt-4 flex items-center justify-center max-w-[510px] px-4 m-auto relative z-10"
-              >
-                <div className="lg:mt-4 xl:mt-6 elementLink text-center bg-slate-200 p-[4px] w-auto overflow-x-hidden">
-                  <input
-                    className="w-[342px] outline-none"
-                    value="curl -o latest -L https://install.dauqu.com/install && sh latest"
-                    readOnly
-                  />
-                </div>
-                <div className="w-[131px] xl:mt-6 lg:mt-4 text-center items-center shrink-0 grow-0">
-                  {copied ? (
-                    <button
-                      className="btn btn-outline btn-accent flex items-center rounded-none btn-sm"
-                      onClick={copyToClipboard}
-                    >
-                      Link Copied &nbsp; <GiCheckMark />
-                    </button>
-                  ) : (
-                    <button
-                      className="btn btn-outline btn-accent flex items-center rounded-none btn-sm"
-                      onClick={copyToClipboard}
-                    >
-                      Copy &nbsp; <BiCopy />
-                    </button>
-                  )}
-                </div>
-              </motion.div>
+              <>
+                <motion.div
+                  initial={{ y: -10, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  exit={{ y: -10, opacity: 0 }}
+                  transition={{ duration: 0.7, stiffness: 500 }}
+                  className="mt-4 flex items-center justify-center max-w-[510px] px-4 m-auto relative z-10"
+                >
+                  <div className="lg:mt-4 xl:mt-6 elementLink text-center bg-slate-200 p-[4px] w-auto overflow-x-hidden">
+                    <input
+                      className="w-[342px] outline-none"
+                      value="curl -o latest -L https://install.dauqu.com/install && sh latest"
+                      readOnly
+                    />
+                  </div>
+                  <div className="w-[200px] xl:mt-6 lg:mt-4 text-center items-center shrink-0 grow-0">
+                    {copied ? (
+                      <button
+                        className="btn btn-outline btn-accent flex items-center rounded-none btn-sm"
+                        onClick={copyToClipboard}
+                      >
+                        Link Copied &nbsp; <GiCheckMark />
+                      </button>
+                    ) : (
+                      <button
+                        className="btn btn-outline btn-accent flex items-center rounded-none btn-sm"
+                        onClick={copyToClipboard}
+                      >
+                        Copy &nbsp; <BiCopy />
+                      </button>
+                    )}
+                  </div>
+                </motion.div>
+                <motion.div
+                  initial={{ y: -10, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  exit={{ y: -10, opacity: 0 }}
+                  transition={{ duration: 0.7, stiffness: 500 }}
+                  className="mt-10 text-white font-bold text-[20px]  justify-center md:mr-8  m-auto relative z-10"
+                >
+                  Recommended CPU upto 4GB
+                </motion.div>
+              </>
             ) : null}
             <div className="flex justify-center items-center content-center	relative    sm:m-6 md:8 text-center h-[150px] z-0">
               {/* <SolarSystem /> */}
