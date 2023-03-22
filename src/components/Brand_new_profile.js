@@ -199,6 +199,39 @@ const Brand_new_profile = ({ children }) => {
     }
   };
 
+  // code to get transaction history of user
+  const [transactions, setTransactions] = useState([]);
+  const getTransactions = async () => {
+    axios
+      .get(`${API}/orders/email/info@dauqu.com`)
+      .then((res) => {
+        setTransactions(res.data);
+        console.log(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  useEffect(() => {
+    getTransactions();
+  }, []);
+  // code to get plan type
+  // const [planType, setPlanType] = useState("");
+  // const getPlanType = async () => {
+  //   await axios
+  //     .get(`${API}/plans/${user.product_slug}`)
+  //     .then((res) => {
+  //       setPlanType(res.data);
+  //       console.log(res.data);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // };
+  // useEffect(() => {
+  //   getPlanType();
+  // }, []);
   return (
     <div>
       <SecondHeader />
@@ -898,10 +931,11 @@ const Brand_new_profile = ({ children }) => {
             <table className="w-full">
               <thead>
                 <tr>
-                  <th>Invoice ID</th>
-                  <th>Date</th>
+                  <th className="text-center">ID</th>
+                  <th>Plan Slug</th>
+                  <th>Purchase Date</th>
+                  <th>Start Date</th>
                   <th>Expiry Date</th>
-                  <th>User</th>
                   <th>Amount</th>
                   <th>Type</th>
                   <th>Location</th>
@@ -909,34 +943,53 @@ const Brand_new_profile = ({ children }) => {
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td data-column="First Name">#85748</td>
-                  <td data-column="Last Name">14/1/2023</td>
-                  <td data-column="Last Name">14/1/2024</td>
-                  <td data-column="Job Title">Username</td>
-                  <td data-column="Twitter">$145</td>
-                  <td data-column="Twitter">Premium</td>
-                  <td data-column="Twitter">Delhi</td>
-                  <td data-column="Twitter">
-                    <div className="bg-green-400 text-white p-2 text-center rounded-3xl">
-                      Active
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td data-column="First Name">#85742</td>
-                  <td data-column="Last Name">14/1/2021</td>
-                  <td data-column="Last Name">14/1/2022</td>
-                  <td data-column="Job Title">Username</td>
-                  <td data-column="Twitter">$145</td>
-                  <td data-column="Twitter">Premium</td>
-                  <td data-column="Twitter">Delhi</td>
-                  <td data-column="Twitter">
-                    <div className="bg-red-400 text-white p-2 text-center rounded-3xl">
-                      Expired
-                    </div>
-                  </td>
-                </tr>
+                {transactions.map((item, index) => {
+                  return (
+                    <>
+                      <tr key={item.id}>
+                        <td data-column="Plan Slug" className="text-center">
+                          {/* print 1,2,3 */}
+                          {index + 1}
+                        </td>
+                        <td data-column="Plan Slug">{item.product_slug}</td>
+                        <td data-column="Purchase Date">
+                          {item.date.split("T")[0]}
+                        </td>
+                        <td data-column="Start Date">
+                          {item.plan_start_date.split("T")[0]}
+                        </td>
+                        <td data-column="Expiry Date">
+                          {item.plan_expiry_date.split("T")[0]}
+                        </td>
+
+                        <td data-column="Twitter" className="text-center">
+                          {item.product_price}
+                        </td>
+                        <td data-column="Twitter">
+                          {item.product_price == 880
+                            ? "Basic"
+                            : item.product_price == 2320
+                            ? "Popular"
+                            : item.product_price == 9200
+                            ? "Premium"
+                            : null}
+                        </td>
+                        <td data-column="Twitter">{item.city}</td>
+                        <td data-column="Twitter">
+                          {item.payment_Status == "success" ? (
+                            <div className="bg-green-400 text-white p-2 text-center rounded-3xl">
+                              Active
+                            </div>
+                          ) : (
+                            <div className="bg-red-400 text-white p-2 text-center rounded-3xl">
+                              Un-Active
+                            </div>
+                          )}
+                        </td>
+                      </tr>
+                    </>
+                  );
+                })}
               </tbody>
             </table>
           </div>
