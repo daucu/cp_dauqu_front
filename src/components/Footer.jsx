@@ -103,7 +103,7 @@ function Footer() {
           </div>
           <div className="">
             <div className="text-[#3A3A3A]  cursor-pointer  mt-2">
-              <b>Address: &nbsp;</b><br /> 809, 8th Floor, Pearls Best Heights 1,<br />
+              <b>Address: &nbsp;</b> 809, 8th Floor, Pearls Best Heights 1,
               NSP, Pitampura, New Delhi-110034
             </div>
             <div className="text-[#3A3A3A]  cursor-pointer mt-2">
