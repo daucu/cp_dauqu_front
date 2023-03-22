@@ -6,7 +6,7 @@ const Github_information = () => {
     <div>
       
       {/* =========github information starts here========= */}
-        <div className='flex justify-center items-center w-full h-[100vh] bg-red-500'>
+        <div className='flex justify-center items-center w-full h-[100vh]  '>
             Github_information
         </div>
       {/* =========github information end here========= */}

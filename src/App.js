@@ -39,8 +39,6 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/forget-password" element={<Forget_pass />} />
         <Route path="/register" element={<Register />} />
-        {/* <Route path="/profile" element={<Profile />} /> */}
-        {/* <Route path="/profile" element={<New_profile />} /> */}
         <Route path="/profile" element={<Brand_new_profile />} />
         {/*this is currently working profile*/}
         <Route path="/updatepsw" element={<Update_psw />} />
@@ -67,7 +65,7 @@ function App() {
       </Routes>
       <ToastContainer
         position="top-right"
-        autoClose={5000}
+        autoClose={2000}
         hideProgressBar={false}
         newestOnTop={false}
         closeOnClick
@@ -82,10 +80,3 @@ function App() {
 }
 
 export default App;
-
-// https://dauqu.com/support/
-// https://dauqu.com/terms-of-service
-// https://dauqu.com/privacy-policy
-// https://dauqu.com/cancellation
-
-// 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

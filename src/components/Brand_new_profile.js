@@ -18,6 +18,7 @@ import { API } from "./Constant";
 import axios from "axios";
 import trustimg from "../assets/images/trust.png";
 import { toast } from "react-toastify";
+import { GrTransaction } from "react-icons/gr";
 
 const Brand_new_profile = ({ children }) => {
   const [old_password, setOld_password] = useState("");
@@ -291,7 +292,7 @@ const Brand_new_profile = ({ children }) => {
                     }
                   >
                     <div className="mr-[10px]">
-                      <MdOutlineSecurity size={20} />
+                      <GrTransaction size={20} />
                     </div>
                     <div className="text-[18px] ">Transaction</div>
                   </div>
@@ -447,8 +448,16 @@ const Brand_new_profile = ({ children }) => {
 
         <div className={active === 2 ? "grow shrink pt-16" : "hidden"}>
           {/* =========github information starts here========= */}
-          <div className="flex justify-center items-center w-full h-[100vh] bg-red-500">
-            Github_information
+          <div className="flex flex-col md:p-32 p-8 justify-center items-center w-full   ">
+            <div className="w-[150px] h-[150px]">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/1409/1409819.png"
+                className="w-[100%] h-[100%]"
+              />
+            </div>
+            <div className="md:text-gray-600 font-bold md:text-[30px] text-[20px]">We are working on this page</div>
+            <div className="md:text-gray-600 font-bold md:text-[27px] text-[19px]">This will be available soon</div>
+            <div className="md:text-gray-600 font-bold md:text-[22px] text-[17px] md:mt-8">We will notify you....</div>
           </div>
           {/* =========github information end here========= */}
         </div>

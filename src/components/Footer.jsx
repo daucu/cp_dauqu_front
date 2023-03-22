@@ -1,10 +1,53 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { FaFacebookF, FaLinkedinIn, FaInstagram } from "react-icons/fa";
 import { AiOutlineInstagram, AiOutlineTwitter } from "react-icons/ai";
 import { BsArrowUpRight } from "react-icons/bs";
 import { IoMdMail } from "react-icons/io";
 import "../assets/css/Footer.css";
+import axios from "axios";
+import { API } from "./Constant";
+import { CountryDropdown } from "react-country-region-selector";
+import { toast } from "react-toastify";
+
 function Footer() {
+  // code to send email to backend
+  const [email, setEmail] = useState("");
+  const [firstname, setFirstname] = useState("");
+  const [lastname, setLastname] = useState("");
+
+  const [country, setCountry] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    axios
+      .post(`${API}/email_newsletter`, {
+        email: email,
+        firstname: firstname,
+        lastname: lastname,
+        country: country,
+      })
+      .then((res) => {
+        console.log(res);
+        toast.success(res.data.message);
+        setTimeout(() => {
+          setEmail("");
+          setFirstname("");
+          setLastname("");
+          setCountry("");
+        }, [2000]);
+      })
+      .catch((err) => {
+        console.log(err);
+        toast.error(err.response.data);
+        setTimeout(() => {
+          setEmail("");
+          setFirstname("");
+          setLastname("");
+          setCountry("");
+        }, [2000]);
+      });
+  };
+
   return (
     <div className="bg-[#FAFAFA]  p-6">
       <div className="lg:w-1/2 min-w-[280px]  md:p-10 m-auto items-center text-center xl:p-[120px]">
@@ -25,15 +68,20 @@ function Footer() {
           Enter your email to subscribe to our latest updates and events
         </div>
         <div className="flex justify-center mt-8 ">
-          <div className="w-[80%]">
+          <div className="w-full">
             <input
               type="email"
               placeholder="Email address"
               className="inputt rounded w-full"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
           </div>
           <div className="">
-            <button className="arrowbtn bg-[#165461] lg:w-[150px] md:w-[100px] sm:w-[85px] min-w-[70px] flex justify-center hover:sha">
+            <button
+              className="arrowbtn bg-[#165461] lg:w-[150px] md:w-[100px] sm:w-[85px] min-w-[70px] flex justify-center hover:sha"
+              onClick={handleSubmit}
+            >
               <BsArrowUpRight
                 style={{
                   color: "white",
@@ -43,6 +91,35 @@ function Footer() {
                 }}
               />
             </button>
+          </div>
+        </div>
+        <div>
+          <div className="mt-8   md:flex items-center justify-between   ">
+            <div className="md:w-[45%] w-[100%]">
+              <input
+                type="text"
+                className="border bg-[#FFFFFF] border-[#9B9B9B] rounded w-full md:w-[100%]"
+                placeholder="First Name"
+                value={firstname}
+                onChange={(e) => setFirstname(e.target.value)}
+              />
+            </div>
+            <div className="md:w-[45%] w-[100%]  md:mt-0 mt-8">
+              <input
+                type="text"
+                className="border bg-[#FFFFFF] border-[#9B9B9B] rounded w-full md:w-[100%]"
+                placeholder="Last Name"
+                value={lastname}
+                onChange={(e) => setLastname(e.target.value)}
+              />
+            </div>
+          </div>
+          <div className="w-full mt-8">
+            <CountryDropdown
+              className="border bg-[#FFFFFF] border-[#9B9B9B] rounded w-full"
+              value={country}
+              onChange={(val) => setCountry(val)}
+            />
           </div>
         </div>
       </div>
