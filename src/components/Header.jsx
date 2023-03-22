@@ -62,56 +62,54 @@ function Header() {
                   <h2 className="text-2xl text-[white] font-bold">Dauqu</h2>
                 </Link>
                 <div className="flex items-center">
-                <div className="min-w-[120px] md:hidden">
-              {/* <button className="bg-[#337681] rounded p-2 text-[#DCE8E9] text-[14px] text-center font-semibold">
+                  <div className="min-w-[120px] md:hidden">
+                    {/* <button className="bg-[#337681] rounded p-2 text-[#DCE8E9] text-[14px] text-center font-semibold">
              
               </button> */}
-              <button
-                onClick={() => setClipboard(!clipboard)}
-                className="btn btn-outline btn-accent rounded-none btn-sm"
-              >
-                Install Now
-              </button>
-            </div>
-                <div className="md:hidden">
-                  <button
-                    className="p-2 text-[white] rounded-md outline-none focus:border-gray-400 focus:border"
-                    onClick={() => setNavbar(!navbar)}
-                  >
-                    {navbar ? (
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="w-6 h-6"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
-                    ) : (
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="w-6 h-6"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        strokeWidth={2}
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M4 6h16M4 12h16M4 18h16"
-                        />
-                      </svg>
-                    )}
-                  </button>
+                    <button
+                      onClick={() => setClipboard(!clipboard)}
+                      className="btn btn-outline btn-accent rounded-none btn-sm"
+                    >
+                      Install Now
+                    </button>
+                  </div>
+                  <div className="md:hidden">
+                    <button
+                      className="p-2 text-[white] rounded-md outline-none focus:border-gray-400 focus:border"
+                      onClick={() => setNavbar(!navbar)}
+                    >
+                      {navbar ? (
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="w-6 h-6"
+                          viewBox="0 0 20 20"
+                          fill="currentColor"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                            clipRule="evenodd"
+                          />
+                        </svg>
+                      ) : (
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="w-6 h-6"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                          strokeWidth={2}
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M4 6h16M4 12h16M4 18h16"
+                          />
+                        </svg>
+                      )}
+                    </button>
+                  </div>
                 </div>
-
-                </div>
-
               </div>
             </div>
             <div>
@@ -193,7 +191,18 @@ function Header() {
         >
           <div className="text-center sm:mt-0 sm:pt-0  md:mt-6 md:p-6 lg:mt-0 items-center mb-[40px] relative z-10">
             <div className="text-white p-2  font-bold lg:text-[40px] text-[25px] mt-10 sm:mt-0 relative z-10">
-             <span className="sm:text-[60px] text-[34px]" style={{background:"linear-gradient(to right, #b2ff42 0%, #0d8773 100%)", WebkitBackgroundClip:"text", WebkitTextFillColor:"transparent"}}>Free Self Hosted</span> <br />
+              <span
+                className="sm:text-[60px] text-[34px]"
+                style={{
+                  background:
+                    "linear-gradient(to right, #b2ff42 0%, #0d8773 100%)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                }}
+              >
+                Free Self Hosted
+              </span>{" "}
+              <br />
               Deployment Panel
             </div>
 
@@ -218,7 +227,11 @@ function Header() {
                 className="mt-4 flex items-center justify-center max-w-[510px] px-4 m-auto relative z-10"
               >
                 <div className="lg:mt-4 xl:mt-6 elementLink text-center bg-slate-200 p-[4px] w-auto overflow-x-hidden">
-                  <input className="w-[342px] outline-none" value="curl -o latest -L https://install.dauqu.com/install && sh latest" readOnly/>
+                  <input
+                    className="w-[342px] outline-none"
+                    value="curl -o latest -L https://install.dauqu.com/install && sh latest"
+                    readOnly
+                  />
                 </div>
                 <div className="w-[131px] xl:mt-6 lg:mt-4 text-center items-center shrink-0 grow-0">
                   {copied ? (
