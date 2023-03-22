@@ -213,7 +213,7 @@ const Brand_new_profile = ({ children }) => {
         console.log(err);
       });
   };
-
+ 
   useEffect(() => {
     getTransactions();
   }, []);
