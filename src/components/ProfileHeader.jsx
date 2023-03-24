@@ -377,7 +377,7 @@ function ProfileHeader({ children }) {
             {/*  sixth Link */}
             <div className="p-2"></div>
             <NavLink
-              to="/three"
+              to="/invoice"
               className={({ isActive }) =>
                 isActive
                   ? "border-b-[2px] hover:bg-gray-300  bg-gray-200  px-6 py-2  border-[#05232A] flex items-center"

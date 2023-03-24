@@ -51,51 +51,55 @@ function Security() {
   };
   return (
     <div>
-      <div>
-        {/* <SecondHeader /> */}
-      </div>
+      <div>{/* <SecondHeader /> */}</div>
       <div>
         <ProfileHeader>
           <div className="mt-8">
             <div className="font-semibold text-black">Change Password</div>
             <hr className="my-2" />
           </div>
-          <div className="flex mt-6 items-center">
-            <div className="text-black w-[15%]">Old password</div>
-            <div className="w-[85%]">
+          <div className="md:flex mt-6 items-center">
+            <div className="text-black md:w-[15%] md:mb-0 mb-2">
+              Old password
+            </div>
+            <div className="md:w-[85%]">
               <input
                 type="password"
-                className="input input-bordered w-full"
+                className="input input-bordered w-full rounded-none "
                 value={old_password}
                 onChange={(e) => setOld_password(e.target.value)}
               />
             </div>
           </div>
-          <div className="flex mt-6 items-center">
-            <div className="text-black w-[15%]">New password</div>
-            <div className="w-[85%]">
+          <div className="md:flex mt-6 items-center">
+            <div className="text-black md:w-[15%] md:mb-0 mb-2">
+              New password
+            </div>
+            <div className="md:w-[85%]">
               <input
                 type="password"
-                className="input input-bordered w-full"
+                className="input input-bordered w-full rounded-none "
                 value={new_password}
                 onChange={(e) => setNew_password(e.target.value)}
               />
             </div>
           </div>
-          <div className="flex mt-6 items-center">
-            <div className="text-black w-[15%]">Confirm password</div>
-            <div className="w-[85%]">
+          <div className="md:flex mt-6 items-center">
+            <div className="text-black md:w-[15%] md:mb-0 mb-2">
+              Confirm password
+            </div>
+            <div className="md:w-[85%]">
               <input
                 type="password"
-                className="input input-bordered w-full"
+                className="input input-bordered w-full rounded-none "
                 value={confirm_password}
                 onChange={(e) => setConfirm_password(e.target.value)}
               />
             </div>
           </div>
-          <div className="flex mt-6 justify-center items-center">
+          <div className="flex mt-6  justify-center items-center">
             <button
-              className="btn bg-[#165461] "
+              className="btn btn-outline btn-accent rounded-none btn-sm hover:bg-[#165461] text-black hover:text-white "
               onClick={() => updatePassword()}
             >
               Change Password
