@@ -53,7 +53,7 @@ function Profilee() {
                 </div>
                 <hr className="my-2" />
                 <div className="md:flex items-center md:mt-8 justify-between ">
-                  <div className="p-2 border w-[300px]  ">
+                  <div className="p-2 border w-[300px]  md:m-0 m-auto  ">
                     <div className="flex items-center justify-between">
                       <div className="text-[#333] font-semibold text-[20px]">
                         Current Balance
@@ -77,7 +77,7 @@ function Profilee() {
                       </div>
                     </div>
                   </div>
-                  <div className="p-2 border w-[300px]  ">
+                  <div className="p-2 border w-[300px]  md:m-0 m-auto  ">
                     <div className="flex items-center justify-between">
                       <div className="text-[#333] font-semibold text-[20px]">
                         Rewards
@@ -101,7 +101,7 @@ function Profilee() {
                       </div>
                     </div>
                   </div>
-                  <div className="p-2 border w-[300px]  ">
+                  <div className="p-2 border w-[300px]  md:m-0 m-auto  ">
                     <div className="flex items-center justify-between">
                       <div className="text-[#333] font-semibold text-[20px]">
                         Last Debited

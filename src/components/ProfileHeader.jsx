@@ -263,7 +263,7 @@ function ProfileHeader({ children }) {
           </div>
         </div>
         {active ? (
-          <div className="hiddendiv fixed shadow-2xl  h-screen top-[65px] p-4 animate-slide_right">
+          <div className="hiddendiv fixed shadow-2xl z-10 h-screen top-[65px] p-4 animate-slide_right">
             {/* first link */}
             <div className="p-2"></div>
             <NavLink
