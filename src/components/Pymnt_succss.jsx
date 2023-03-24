@@ -7,7 +7,7 @@ const Pymnt_succss = () => {
             <div>
                 <div className='text-center'>Payment successfull</div>
                 <button className='border-green-500 border-2 px-6 py-2 mt-2 '>
-                    <Link to="/profile">Go to Profile</Link>
+                    <Link to="/profilee">Go to Profile</Link>
                 </button>
             </div>
 
