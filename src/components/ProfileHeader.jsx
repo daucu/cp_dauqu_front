@@ -69,7 +69,7 @@ function ProfileHeader({ children }) {
           <div className="font-bold text-black text-[20px]">Dauqu</div>
         </Link>
         <div className="flex items-center">
-          <div className="cursor-pointer" onClick={HandleAlert} >
+          <div className="cursor-pointer" onClick={HandleAlert}>
             <IoIosNotificationsOutline size={25} />
           </div>
           <div className="hiddenMenuBtn flex   justify-end">
@@ -93,7 +93,7 @@ function ProfileHeader({ children }) {
             to="/profilee"
             className={({ isActive }) =>
               isActive
-                ? "border-b-[2px] hover:bg-gray-200  px-6 py-2  border-[#05232A] flex items-center"
+                ? "border-b-[2px] hover:bg-gray-300  bg-gray-200 px-6 py-2  border-[#05232A] flex items-center"
                 : "flex items-center hover:bg-gray-200  px-6 py-2 "
             }
           >
@@ -115,7 +115,7 @@ function ProfileHeader({ children }) {
             to="/github"
             className={({ isActive }) =>
               isActive
-                ? "border-b-[2px] hover:bg-gray-200  px-6 py-2  border-[#05232A] flex items-center"
+                ? "border-b-[2px] hover:bg-gray-300  bg-gray-200  px-6 py-2  border-[#05232A] flex items-center"
                 : "flex items-center hover:bg-gray-200  px-6 py-2 "
             }
           >
@@ -137,7 +137,7 @@ function ProfileHeader({ children }) {
             to="/subscibe"
             className={({ isActive }) =>
               isActive
-                ? "border-b-[2px] hover:bg-gray-200  px-6 py-2  border-[#05232A] flex items-center"
+                ? "border-b-[2px] hover:bg-gray-300  bg-gray-200  px-6 py-2  border-[#05232A] flex items-center"
                 : "flex items-center hover:bg-gray-200  px-6 py-2 "
             }
           >
@@ -159,7 +159,7 @@ function ProfileHeader({ children }) {
             to="/domains"
             className={({ isActive }) =>
               isActive
-                ? "border-b-[2px] hover:bg-gray-200  px-6 py-2  border-[#05232A] flex items-center"
+                ? "border-b-[2px] hover:bg-gray-300  bg-gray-200  px-6 py-2  border-[#05232A] flex items-center"
                 : "flex items-center hover:bg-gray-200  px-6 py-2 "
             }
           >
@@ -181,7 +181,7 @@ function ProfileHeader({ children }) {
             to="/transmoney"
             className={({ isActive }) =>
               isActive
-                ? "border-b-[2px] hover:bg-gray-200  px-6 py-2  border-[#05232A] flex items-center"
+                ? "border-b-[2px] hover:bg-gray-300  bg-gray-200  px-6 py-2  border-[#05232A] flex items-center"
                 : "flex items-center hover:bg-gray-200  px-6 py-2 "
             }
           >
@@ -203,7 +203,7 @@ function ProfileHeader({ children }) {
             to="/invoice"
             className={({ isActive }) =>
               isActive
-                ? "border-b-[2px] hover:bg-gray-200  px-6 py-2  border-[#05232A] flex items-center"
+                ? "border-b-[2px] hover:bg-gray-300  bg-gray-200  px-6 py-2  border-[#05232A] flex items-center"
                 : "flex items-center hover:bg-gray-200  px-6 py-2 "
             }
           >
@@ -225,7 +225,7 @@ function ProfileHeader({ children }) {
             to="/updatepswrd"
             className={({ isActive }) =>
               isActive
-                ? "border-b-[2px] hover:bg-gray-200  px-6 py-2  border-[#05232A] flex items-center"
+                ? "border-b-[2px] hover:bg-gray-300  bg-gray-200  px-6 py-2  border-[#05232A] flex items-center"
                 : "flex items-center hover:bg-gray-200  px-6 py-2 "
             }
           >
@@ -270,7 +270,7 @@ function ProfileHeader({ children }) {
               to="/profilee"
               className={({ isActive }) =>
                 isActive
-                  ? "border-b-[2px] hover:bg-gray-200  px-6 py-2  border-[#05232A] flex items-center"
+                  ? "border-b-[2px] hover:bg-gray-300  bg-gray-200  px-6 py-2  border-[#05232A] flex items-center"
                   : "flex items-center hover:bg-gray-200  px-6 py-2 "
               }
             >
@@ -292,7 +292,7 @@ function ProfileHeader({ children }) {
               to="/github"
               className={({ isActive }) =>
                 isActive
-                  ? "border-b-[2px] hover:bg-gray-200  px-6 py-2  border-[#05232A] flex items-center"
+                  ? "border-b-[2px] hover:bg-gray-300  bg-gray-200  px-6 py-2  border-[#05232A] flex items-center"
                   : "flex items-center hover:bg-gray-200  px-6 py-2 "
               }
             >
@@ -314,7 +314,7 @@ function ProfileHeader({ children }) {
               to="/subscibe"
               className={({ isActive }) =>
                 isActive
-                  ? "border-b-[2px] hover:bg-gray-200  px-6 py-2  border-[#05232A] flex items-center"
+                  ? "border-b-[2px] hover:bg-gray-300  bg-gray-200  px-6 py-2  border-[#05232A] flex items-center"
                   : "flex items-center hover:bg-gray-200  px-6 py-2 "
               }
             >
@@ -336,7 +336,7 @@ function ProfileHeader({ children }) {
               to="/domains"
               className={({ isActive }) =>
                 isActive
-                  ? "border-b-[2px] hover:bg-gray-200  px-6 py-2  border-[#05232A] flex items-center"
+                  ? "border-b-[2px] hover:bg-gray-300  bg-gray-200  px-6 py-2  border-[#05232A] flex items-center"
                   : "flex items-center hover:bg-gray-200  px-6 py-2 "
               }
             >
@@ -358,7 +358,7 @@ function ProfileHeader({ children }) {
               to="/transmoney"
               className={({ isActive }) =>
                 isActive
-                  ? "border-b-[2px] hover:bg-gray-200  px-6 py-2  border-[#05232A] flex items-center"
+                  ? "border-b-[2px] hover:bg-gray-300  bg-gray-200  px-6 py-2  border-[#05232A] flex items-center"
                   : "flex items-center hover:bg-gray-200  px-6 py-2 "
               }
             >
@@ -380,7 +380,7 @@ function ProfileHeader({ children }) {
               to="/three"
               className={({ isActive }) =>
                 isActive
-                  ? "border-b-[2px] hover:bg-gray-200  px-6 py-2  border-[#05232A] flex items-center"
+                  ? "border-b-[2px] hover:bg-gray-300  bg-gray-200  px-6 py-2  border-[#05232A] flex items-center"
                   : "flex items-center hover:bg-gray-200  px-6 py-2 "
               }
             >
@@ -402,7 +402,7 @@ function ProfileHeader({ children }) {
               to="/updatepswrd"
               className={({ isActive }) =>
                 isActive
-                  ? "border-b-[2px] hover:bg-gray-200  px-6 py-2  border-[#05232A] flex items-center"
+                  ? "border-b-[2px] hover:bg-gray-300  bg-gray-200  px-6 py-2  border-[#05232A] flex items-center"
                   : "flex items-center hover:bg-gray-200  px-6 py-2 "
               }
             >
@@ -424,7 +424,7 @@ function ProfileHeader({ children }) {
               to="/updatepswrd"
               className={({ isActive }) =>
                 isActive
-                  ? "border-b-[2px] hover:bg-gray-200  px-6 py-2  border-[#05232A] flex items-center"
+                  ? "border-b-[2px] hover:bg-gray-300  bg-gray-200  px-6 py-2  border-[#05232A] flex items-center"
                   : "flex items-center hover:bg-gray-200  px-6 py-2 "
               }
             >
@@ -432,7 +432,7 @@ function ProfileHeader({ children }) {
                 <FiPower size={20} />
               </div>
               <div
-                className="text-[18px] "
+                className="text-[18px]  "
                 style={{
                   width: `calc(100% - 40px)`,
                 }}
