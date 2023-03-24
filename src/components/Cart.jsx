@@ -6,7 +6,7 @@ import { SiRazorpay } from "react-icons/si";
 import SecondHeader from "./SecondHeader";
 import { motion } from "framer-motion";
 import { useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { FaStripeS } from "react-icons/fa";
 import { BsPaypal } from "react-icons/bs";
 import axios from "axios";
@@ -47,6 +47,7 @@ function Cart() {
     scrollToTop();
   }, []);
 
+  const navigate = useNavigate();
   // getting data of user profile from profile api
   const [user, setUser] = useState("");
   // console.log(setUser.length);
@@ -59,6 +60,7 @@ function Cart() {
       console.log(response.data.data);
     } catch (error) {
       console.log(error);
+      navigate("/login");
     }
   }
   React.useEffect(() => {
@@ -254,17 +256,50 @@ function Cart() {
                         /{cart.billing_cycle}
                       </div>
                       <hr className="mt-4" />
-                      <div className="text-[#383838] font-semibold mt-6">
+                      <div className="text-[#383838] font-semibold mt-4">
                         {cart.plan_info_one}
                       </div>
-                      <div className="text-[#383838] font-semibold mt-6">
-                        {cart.plan_info_two}
+                      <div className="text-[#383838] font-semibold mt-4">
+                        Deploy Unlimited websites
                       </div>
-                      <div className="text-[#383838] font-semibold mt-6">
-                        {cart.plan_info_three}
+                      <div className="text-[#383838] font-semibold mt-4">
+                        Generate free domain
                       </div>
-                      <div className="text-[#383838] font-semibold mt-6">
-                        {cart.plan_info_four}
+                      <div className="text-[#383838] font-semibold mt-4">
+                        File Manager
+                      </div>
+                      <div className="text-[#383838] font-semibold mt-4">
+                        All Database support
+                      </div>
+                      <div className="text-[#383838] font-semibold mt-4">
+                        Free backup
+                      </div>
+                      <div className="text-[#383838] font-semibold mt-4">
+                        All language support
+                      </div>
+                      <div className="text-[#383838] font-semibold mt-4">
+                        Frontend & Backend deployment
+                      </div>
+                      <div className="text-[#383838] font-semibold mt-4">
+                        Web terminal
+                      </div>
+                      <div className="text-[#383838] font-semibold mt-4">
+                        Free SSL support
+                      </div>
+                      <div className="text-[#383838] font-semibold mt-4">
+                        Real Time Analysis
+                      </div>
+                      <div className="text-[#383838] font-semibold mt-4">
+                        Web Mail Support
+                      </div>
+                      <div className="text-[#383838] font-semibold mt-4">
+                        Online file editor
+                      </div>
+                      <div className="text-[#383838] font-semibold mt-4">
+                        Proxy management
+                      </div>
+                      <div className="text-[#383838] font-semibold mt-4">
+                        Docker management
                       </div>
                     </div>
                   </div>
@@ -298,7 +333,7 @@ function Cart() {
                         animate={{ y: 0, opacity: 1 }}
                         exit={{ y: -10, opacity: 0 }}
                         transition={{ duration: 0.7, stiffness: 500 }}
-                        className="mt-12"
+                        className="mt-12 "
                       >
                         <PayPalScriptProvider>
                           <PayPalButtons

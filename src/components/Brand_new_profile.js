@@ -89,19 +89,6 @@ const Brand_new_profile = ({ children }) => {
     },
   ]);
 
-  const NavLink = ({ id, tabTitle, isActive, tabIcon, onClick, href }) => {
-    return (
-      <div></div>
-
-      // <div className={isActive ? "active" : ""} onClick={() => { navigate(id) }} >
-      //     <div className='flex justify-start items-center my-[10px] h-[35px] px-[15px] cursor-pointer font-semibold' >
-      //         <div className='mr-[10px]'>{tabIcon}</div>
-      //         <div className='text-[18px] '>{tabTitle}</div>
-      //     </div>
-      // </div>
-    );
-  };
-
   const navigate = useNavigate();
   // ===========for personal information page  start
   const [user, setUser] = useState("");
@@ -217,7 +204,7 @@ const Brand_new_profile = ({ children }) => {
 
   useEffect(() => {
     console.log("changes");
-    if(user.email === undefined) return;
+    if (user.email === undefined) return;
     getTransactions();
   }, [user]);
   // code to get plan type
@@ -246,20 +233,6 @@ const Brand_new_profile = ({ children }) => {
             <hr className="border" />
             <div className="py-[10px] ">
               <ul className="w-full ">
-                {/* {active ? (
-                            <div className='flex justify-start items-center my-[10px] h-[35px] px-[15px] hover:shadow-md bg-[#00A19E]'  >
-                                <div className='mr-[10px]'><GiTorch size={20} /></div>
-                                <div className='text-[18px] '>Ads management</div>
-                            </div>
-                            ) : 
-                            (
-                            <div className='flex justify-start items-center my-[10px] h-[35px] px-[15px] ' onClick={handleSetActive}>
-                                <div className='mr-[10px]'><GiTorch size={20} /></div>
-                                <div className='text-[18px] '>Ads management</div>
-                            </div>
-                            )
-                        } */}
-
                 <li onClick={() => setActive(1)}>
                   <div
                     className={

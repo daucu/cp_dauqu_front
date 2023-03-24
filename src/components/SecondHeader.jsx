@@ -8,14 +8,13 @@ import { API } from "./Constant";
 function SecondHeader() {
   // --------------
   const [user, setUser] = useState("");
-  // console.log(user.length);
   async function GetUsers() {
     try {
       const response = await axios.get(`${API}/profile`, {
         withCredentials: true,
       });
       setUser(response.data);
-      console.log(response.data);
+      // console.log(response.data);
     } catch (error) {
       // console.log(error);
     }
@@ -100,7 +99,7 @@ function SecondHeader() {
                     </li>
                   </Link>
                 ) : (
-                  <Link to="/profile">
+                  <Link to="/profilee">
                     <li className="btn btn-ghost text-[white] hover:cursor-pointer p-2    ">
                       Profile
                     </li>
