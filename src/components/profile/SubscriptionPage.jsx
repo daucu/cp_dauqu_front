@@ -10,7 +10,7 @@ function SubscriptionPage() {
       {" "}
       <div>
         <div>
-          <SecondHeader />
+          {/* <SecondHeader /> */}
         </div>
         <ProfileHeader>
           <section className=" mt-8 w-full ">

@@ -32,12 +32,12 @@ function Profilee() {
   return (
     <div>
       <div>
-        <SecondHeader />
+        {/* <SecondHeader /> */}
       </div>
       <div>
         <ProfileHeader>
           <div className=" ">
-            <div className="  w-full  ">
+            <div className=" w-full  ">
               <div className="p-3 px-2  rounded-md">
                 <div className="flex justify-between px-2 items-center w-full">
                   <div className="flex w-1/2 ">

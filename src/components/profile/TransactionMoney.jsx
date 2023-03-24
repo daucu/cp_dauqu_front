@@ -51,7 +51,7 @@ function TransactionMoney() {
     <div>
       <div>
         <div>
-          <SecondHeader />
+          {/* <SecondHeader /> */}
         </div>
         <ProfileHeader>
           <div className="flex mt-8 items-center">

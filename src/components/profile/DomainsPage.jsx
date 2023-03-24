@@ -8,7 +8,7 @@ function DomainsPage() {
     <div>
       <div>
         <div>
-          <SecondHeader />
+          {/* <SecondHeader /> */}
         </div>
         <ProfileHeader>
           <section className=" w-full">

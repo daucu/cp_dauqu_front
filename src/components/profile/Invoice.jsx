@@ -7,7 +7,7 @@ function Invoice() {
   return (
     <div>
       <div>
-        <SecondHeader />
+        {/* <SecondHeader /> */}
       </div>
       <div>
         <ProfileHeader>

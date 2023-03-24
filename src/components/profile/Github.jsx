@@ -6,7 +6,7 @@ function Github() {
   return (
     <div>
       <div>
-        <SecondHeader />
+        {/* <SecondHeader /> */}
       </div>
       <ProfileHeader>
         <div className="flex flex-col md:p-32 p-8 justify-center items-center w-full   ">

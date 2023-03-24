@@ -1,6 +1,5 @@
 .maincont {
   display: flex;
-  padding-top: 60px;
   width: 100%;
 }
 .hiddendiv {
@@ -30,5 +29,6 @@
   }
   .hiddenMenuBtn {
     display: flex;
+    margin-left: 20px;
   }
 }

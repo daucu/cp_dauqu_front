@@ -1,18 +1,19 @@
 import React, { useState } from "react";
 import SecondHeader from "./SecondHeader";
 import "../assets/css/profileheader.css";
-import { NavLink, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { CgProfile } from "react-icons/cg";
 import { FiGithub, FiPower } from "react-icons/fi";
 import { RiMoneyDollarCircleLine, RiSecurePaymentLine } from "react-icons/ri";
 import { BiCodeCurly } from "react-icons/bi";
 import { GrClose, GrMenu, GrTransaction } from "react-icons/gr";
 import { MdOutlineSecurity } from "react-icons/md";
-
+import { IoIosNotificationsOutline } from "react-icons/io";
 import { ImUserTie } from "react-icons/im";
 import axios from "axios";
 import { API } from "./Constant";
 import { toast } from "react-toastify";
+import NavBarProfile from "./profile/NavBarProfile";
 function ProfileHeader({ children }) {
   const [active, setActive] = useState(false);
   const [activeLink, setActiveLink] = useState("profile");
@@ -57,21 +58,43 @@ function ProfileHeader({ children }) {
       console.log(error);
     }
   };
+  // alert
+  const HandleAlert = () => {
+    alert("This feature will be available soon...");
+  };
   return (
     <div>
-      <div className="">
-        <SecondHeader />
+      <div className="flex justify-between shadow-md px-4 py-3 items-center">
+        <Link to="/">
+          <div className="font-bold text-black text-[20px]">Dauqu</div>
+        </Link>
+        <div className="flex items-center">
+          <div className="cursor-pointer" onClick={HandleAlert} >
+            <IoIosNotificationsOutline size={25} />
+          </div>
+          <div className="hiddenMenuBtn flex   justify-end">
+            {active ? (
+              <button onClick={() => setActive(false)}>
+                <GrClose className="text-[#4614B9]" size={20} />
+              </button>
+            ) : (
+              <button onClick={() => setActive(true)}>
+                <GrMenu className="text-[#4614B9]" size={20} />
+              </button>
+            )}
+          </div>
+        </div>
       </div>
-      <div className="pt-16 maincont ">
-        <div className="leftcont h-screen p-4 border-2">
+      <div className="  maincont ">
+        <div className="leftcont h-screen   border-2">
           {/* first link */}
           <div className="p-2"></div>
           <NavLink
             to="/profilee"
             className={({ isActive }) =>
               isActive
-                ? "border-b-[3px] hover:bg-gray-200  p-[4px]  border-[#05232A] flex items-center"
-                : "flex items-center hover:bg-gray-200  p-[4px] "
+                ? "border-b-[2px] hover:bg-gray-200  px-4 py-2  border-[#05232A] flex items-center"
+                : "flex items-center hover:bg-gray-200  px-4 py-2 "
             }
           >
             <div className="w-[40px]">
@@ -92,8 +115,8 @@ function ProfileHeader({ children }) {
             to="/github"
             className={({ isActive }) =>
               isActive
-                ? "border-b-[3px] hover:bg-gray-200  p-[4px]  border-[#05232A] flex items-center"
-                : "flex items-center hover:bg-gray-200  p-[4px] "
+                ? "border-b-[2px] hover:bg-gray-200  px-4 py-2  border-[#05232A] flex items-center"
+                : "flex items-center hover:bg-gray-200  px-4 py-2 "
             }
           >
             <div className="w-[40px]">
@@ -114,8 +137,8 @@ function ProfileHeader({ children }) {
             to="/subscibe"
             className={({ isActive }) =>
               isActive
-                ? "border-b-[3px] hover:bg-gray-200  p-[4px]  border-[#05232A] flex items-center"
-                : "flex items-center hover:bg-gray-200  p-[4px] "
+                ? "border-b-[2px] hover:bg-gray-200  px-4 py-2  border-[#05232A] flex items-center"
+                : "flex items-center hover:bg-gray-200  px-4 py-2 "
             }
           >
             <div className="w-[40px]">
@@ -136,8 +159,8 @@ function ProfileHeader({ children }) {
             to="/domains"
             className={({ isActive }) =>
               isActive
-                ? "border-b-[3px] hover:bg-gray-200  p-[4px]  border-[#05232A] flex items-center"
-                : "flex items-center hover:bg-gray-200  p-[4px] "
+                ? "border-b-[2px] hover:bg-gray-200  px-4 py-2  border-[#05232A] flex items-center"
+                : "flex items-center hover:bg-gray-200  px-4 py-2 "
             }
           >
             <div className="w-[40px]">
@@ -158,8 +181,8 @@ function ProfileHeader({ children }) {
             to="/transmoney"
             className={({ isActive }) =>
               isActive
-                ? "border-b-[3px] hover:bg-gray-200  p-[4px]  border-[#05232A] flex items-center"
-                : "flex items-center hover:bg-gray-200  p-[4px] "
+                ? "border-b-[2px] hover:bg-gray-200  px-4 py-2  border-[#05232A] flex items-center"
+                : "flex items-center hover:bg-gray-200  px-4 py-2 "
             }
           >
             <div className="w-[40px]">
@@ -180,8 +203,8 @@ function ProfileHeader({ children }) {
             to="/invoice"
             className={({ isActive }) =>
               isActive
-                ? "border-b-[3px] hover:bg-gray-200  p-[4px]  border-[#05232A] flex items-center"
-                : "flex items-center hover:bg-gray-200  p-[4px] "
+                ? "border-b-[2px] hover:bg-gray-200  px-4 py-2  border-[#05232A] flex items-center"
+                : "flex items-center hover:bg-gray-200  px-4 py-2 "
             }
           >
             <div className="w-[40px]">
@@ -202,8 +225,8 @@ function ProfileHeader({ children }) {
             to="/updatepswrd"
             className={({ isActive }) =>
               isActive
-                ? "border-b-[3px] hover:bg-gray-200  p-[4px]  border-[#05232A] flex items-center"
-                : "flex items-center hover:bg-gray-200  p-[4px] "
+                ? "border-b-[2px] hover:bg-gray-200  px-4 py-2  border-[#05232A] flex items-center"
+                : "flex items-center hover:bg-gray-200  px-4 py-2 "
             }
           >
             <div className="w-[40px]">
@@ -220,7 +243,7 @@ function ProfileHeader({ children }) {
           </NavLink>
           {/*  eigth Link */}
           <div className="p-2"></div>
-          <div className="    p-[4px] ">
+          <div className="    px-4 py-2 ">
             <button
               className="flex  items-center cursor-pointer"
               onClick={HandleLogout}
@@ -247,8 +270,8 @@ function ProfileHeader({ children }) {
               to="/profilee"
               className={({ isActive }) =>
                 isActive
-                  ? "border-b-[3px] hover:bg-gray-200  p-[4px]  border-[#05232A] flex items-center"
-                  : "flex items-center hover:bg-gray-200  p-[4px] "
+                  ? "border-b-[2px] hover:bg-gray-200  px-4 py-2  border-[#05232A] flex items-center"
+                  : "flex items-center hover:bg-gray-200  px-4 py-2 "
               }
             >
               <div className="w-[40px]">
@@ -269,8 +292,8 @@ function ProfileHeader({ children }) {
               to="/github"
               className={({ isActive }) =>
                 isActive
-                  ? "border-b-[3px] hover:bg-gray-200  p-[4px]  border-[#05232A] flex items-center"
-                  : "flex items-center hover:bg-gray-200  p-[4px] "
+                  ? "border-b-[2px] hover:bg-gray-200  px-4 py-2  border-[#05232A] flex items-center"
+                  : "flex items-center hover:bg-gray-200  px-4 py-2 "
               }
             >
               <div className="w-[40px]">
@@ -291,8 +314,8 @@ function ProfileHeader({ children }) {
               to="/subscibe"
               className={({ isActive }) =>
                 isActive
-                  ? "border-b-[3px] hover:bg-gray-200  p-[4px]  border-[#05232A] flex items-center"
-                  : "flex items-center hover:bg-gray-200  p-[4px] "
+                  ? "border-b-[2px] hover:bg-gray-200  px-4 py-2  border-[#05232A] flex items-center"
+                  : "flex items-center hover:bg-gray-200  px-4 py-2 "
               }
             >
               <div className="w-[40px]">
@@ -313,8 +336,8 @@ function ProfileHeader({ children }) {
               to="/domains"
               className={({ isActive }) =>
                 isActive
-                  ? "border-b-[3px] hover:bg-gray-200  p-[4px]  border-[#05232A] flex items-center"
-                  : "flex items-center hover:bg-gray-200  p-[4px] "
+                  ? "border-b-[2px] hover:bg-gray-200  px-4 py-2  border-[#05232A] flex items-center"
+                  : "flex items-center hover:bg-gray-200  px-4 py-2 "
               }
             >
               <div className="w-[40px]">
@@ -335,8 +358,8 @@ function ProfileHeader({ children }) {
               to="/transmoney"
               className={({ isActive }) =>
                 isActive
-                  ? "border-b-[3px] hover:bg-gray-200  p-[4px]  border-[#05232A] flex items-center"
-                  : "flex items-center hover:bg-gray-200  p-[4px] "
+                  ? "border-b-[2px] hover:bg-gray-200  px-4 py-2  border-[#05232A] flex items-center"
+                  : "flex items-center hover:bg-gray-200  px-4 py-2 "
               }
             >
               <div className="w-[40px]">
@@ -357,8 +380,8 @@ function ProfileHeader({ children }) {
               to="/three"
               className={({ isActive }) =>
                 isActive
-                  ? "border-b-[3px] hover:bg-gray-200  p-[4px]  border-[#05232A] flex items-center"
-                  : "flex items-center hover:bg-gray-200  p-[4px] "
+                  ? "border-b-[2px] hover:bg-gray-200  px-4 py-2  border-[#05232A] flex items-center"
+                  : "flex items-center hover:bg-gray-200  px-4 py-2 "
               }
             >
               <div className="w-[40px]">
@@ -379,8 +402,8 @@ function ProfileHeader({ children }) {
               to="/updatepswrd"
               className={({ isActive }) =>
                 isActive
-                  ? "border-b-[3px] hover:bg-gray-200  p-[4px]  border-[#05232A] flex items-center"
-                  : "flex items-center hover:bg-gray-200  p-[4px] "
+                  ? "border-b-[2px] hover:bg-gray-200  px-4 py-2  border-[#05232A] flex items-center"
+                  : "flex items-center hover:bg-gray-200  px-4 py-2 "
               }
             >
               <div className="w-[40px]">
@@ -401,8 +424,8 @@ function ProfileHeader({ children }) {
               to="/updatepswrd"
               className={({ isActive }) =>
                 isActive
-                  ? "border-b-[3px] hover:bg-gray-200  p-[4px]  border-[#05232A] flex items-center"
-                  : "flex items-center hover:bg-gray-200  p-[4px] "
+                  ? "border-b-[2px] hover:bg-gray-200  px-4 py-2  border-[#05232A] flex items-center"
+                  : "flex items-center hover:bg-gray-200  px-4 py-2 "
               }
             >
               <div className="w-[40px]">
@@ -429,17 +452,6 @@ function ProfileHeader({ children }) {
               <div className="ml-[20px]">
                 <h1 className="text-[25px] font-semibold ">Profile</h1>
               </div>
-            </div>
-            <div className="hiddenMenuBtn flex w-[40%] justify-end">
-              {active ? (
-                <button onClick={() => setActive(false)}>
-                  <GrClose className="text-[#4614B9]" size={20} />
-                </button>
-              ) : (
-                <button onClick={() => setActive(true)}>
-                  <GrMenu className="text-[#4614B9]" size={20} />
-                </button>
-              )}
             </div>
           </div>
           <hr className="my-[10px] " />
