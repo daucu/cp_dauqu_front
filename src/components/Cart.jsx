@@ -178,6 +178,7 @@ function Cart() {
             payment_Status: "success",
             product_slug: cart.plan_slug,
             product_price: Number(cart.plan_price * 80),
+            currencyType: maincurrecny,
             city: user.address,
             country: user.country,
             order_status: "success",
@@ -190,7 +191,7 @@ function Cart() {
             notif();
             setPaypalPaymentSuccess(true);
             setTimeout(() => {
-              // window.location.href = "/payment-success";
+              window.location.href = "/payment-success";
             }, [3000]);
           })
           .catch((err) => {

@@ -172,7 +172,7 @@ function Footer() {
               in minutes.
             </div>
           </div>
-          <div className="mt-2 text-[#3A3A3A]">Copyright 2022 by Dauqu</div>
+          <div className="mt-2 text-[#3A3A3A]">Copyright 2023 by Dauqu</div>
           <div className="text-[#3A3A3A] md:w-[100%] w-[50%]   cursor-pointer md:mt-2 mt-8 flex    ">
             <div className="md:w-[15%] w-[30%] hover:text-[#1773EB]">
               <FaFacebookF style={{ fontSize: "20px" }} />
@@ -246,7 +246,7 @@ function Footer() {
         </div>
       </div>
       <div className="text-center text-[#124957] font-bold">
-        Copyright &copy; 2022 by Dauqu
+        Copyright &copy; 2023  by Dauqu
       </div>
     </div>
   );
