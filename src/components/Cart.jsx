@@ -151,8 +151,11 @@ function Cart() {
     //  var amount = paypal_payment;
     var options = {
       key: "rzp_test_0K0pEnlGiYh9G3", // Enter the Key ID generated from the Dashboard
-      amount: Number(cart.plan_price * 100 * 80),
-      currency: "INR",
+      amount:
+        maincurrecny == "INR"
+          ? Number(cart.plan_price * 100 * 80)
+          : Number(cart.plan_price * 100), // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+      currency: maincurrecny,
       description: "Acme Corp",
       image: "https://avatars.githubusercontent.com/u/95732637?v=4",
       prefill: {
@@ -187,7 +190,7 @@ function Cart() {
             notif();
             setPaypalPaymentSuccess(true);
             setTimeout(() => {
-              window.location.href = "/payment-success";
+              // window.location.href = "/payment-success";
             }, [3000]);
           })
           .catch((err) => {
@@ -210,7 +213,9 @@ function Cart() {
     const paymentObject = new window.Razorpay(options);
     paymentObject.open();
   }
-
+  const [displayRazorrpay, setDisplayRazorrpay] = useState(false);
+  const [displaypaypal, setDisplaypaypal] = useState(false);
+  const [maincurrecny, setMaincurrecny] = useState(false);
   return (
     <div className="">
       <div className="">
@@ -319,14 +324,25 @@ function Cart() {
                 </div>
                 <div className="md:w-1/2 w-full m-2   text-[#393C3F] font-semibold md:p-6   bg-[#FAFAFA] rounded-[5px]">
                   <div className="text-center items-center">
-                    <button
+                    {/* <button
                       className="btn btn-success w-full font-bold    "
                       onClick={() => setHiddendiv(!hiddendiv)}
                     >
                       Checkout
-                    </button>
+                    </button> */}
+                    <select
+                      name=""
+                      id=""
+                      className=" w-full"
+                      onChange={(e) => {
+                        setMaincurrecny(e.target.value);
+                      }}
+                    >
+                      <option value="INR">INR</option>
+                      <option value="USD">USD</option>
+                    </select>
                   </div>
-                  {hiddendiv ? (
+                  {maincurrecny == "USD" ? (
                     <>
                       <motion.div
                         initial={{ y: -10, opacity: 0 }}
@@ -366,7 +382,7 @@ function Cart() {
                             }}
                           />
                         </PayPalScriptProvider>
-                        <div className="w-full mt-4">
+                        <div className="mt-4">
                           <button
                             className="btn  w-full rounded-[3px] flex justify-center text-[15px] "
                             onClick={displayRazorpay}
@@ -389,14 +405,39 @@ function Cart() {
                     </>
                   ) : (
                     <>
-                      <div className="mt-16">
+                      {/* <div className="mt-16">
                         <img src={ck} alt="" srcset="" className="m-auto" />
                       </div>
                       <div className="mt-14 text-center   ">
                         <span className="text-[20px]">Clcik&nbsp;</span>
                         <span className="font-bold text-[20px]">Checkout</span>
                         <span className="text-[20px]"> to purchase Plan</span>
-                      </div>
+                      </div> */}
+                      <motion.div
+                        initial={{ y: -10, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        exit={{ y: -10, opacity: 0 }}
+                        transition={{ duration: 0.7, stiffness: 500 }}
+                        className="w-full mt-12 "
+                      >
+                        <button
+                          className="btn  w-full rounded-[3px] flex justify-center text-[15px] "
+                          onClick={displayRazorpay}
+                        >
+                          <div className="w-auto">
+                            {/* <SiRazorpay /> */}
+                            <img
+                              src={rpay}
+                              className="w-[48px] h-[48px]"
+                              alt=""
+                              srcset=""
+                            />
+                          </div>
+                          <div>
+                            <p className="italic ">RazorPay</p>
+                          </div>
+                        </button>
+                      </motion.div>
                     </>
                   )}
                 </div>

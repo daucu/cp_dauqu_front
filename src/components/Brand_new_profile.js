@@ -207,22 +207,8 @@ const Brand_new_profile = ({ children }) => {
     if (user.email === undefined) return;
     getTransactions();
   }, [user]);
-  // code to get plan type
-  // const [planType, setPlanType] = useState("");
-  // const getPlanType = async () => {
-  //   await axios
-  //     .get(`${API}/plans/${user.product_slug}`)
-  //     .then((res) => {
-  //       setPlanType(res.data);
-  //       console.log(res.data);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // };
-  // useEffect(() => {
-  //   getPlanType();
-  // }, []);
+
+ 
   return (
     <div>
       <SecondHeader />

@@ -46,7 +46,6 @@ function App() {
         <Route path="/payment-success" element={<Pymnt_succss />} />
         <Route path="/profileheader" element={<ProfileHeader />} />
         {/* ---------- */}
-
         <Route path="/profilee" element={<Profilee />} />
         <Route path="/github" element={<Github />} />
         <Route path="/subscibe" element={<SubscriptionPage />} />

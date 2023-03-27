@@ -6,7 +6,10 @@ import { API } from "../Constant";
 import ProfileHeader from "../ProfileHeader";
 import SecondHeader from "../SecondHeader";
 import { AiOutlineDollarCircle, AiOutlineHome } from "react-icons/ai";
+import { HiOutlineCurrencyRupee } from "react-icons/hi";
 import { GiDiamondTrophy, GiMoneyStack } from "react-icons/gi";
+import { BiDollar } from "react-icons/bi";
+import { TbCurrencyRupee } from "react-icons/tb";
 
 function Profilee() {
   const [user, setUser] = useState("");
@@ -29,11 +32,30 @@ function Profilee() {
   React.useEffect(() => {
     GetUsers();
   }, []);
+
+  // code to get total price of all orders by user uniquekey
+  const [totalprice, setTotalprice] = useState(0);
+  const getTotalPrice = async () => {
+    axios
+      .get(`${API}/orders/totalprice/${user.uniqueKey}`)
+      .then((res) => {
+        console.log(res.data);
+        if (user.country == "India") {
+          setTotalprice(res.data);
+        } else {
+          setTotalprice(res.data / 80);
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+  useEffect(() => {
+    getTotalPrice();
+  }, [user]);
   return (
     <div>
-      <div>
-        {/* <SecondHeader /> */}
-      </div>
+      <div>{/* <SecondHeader /> */}</div>
       <div>
         <ProfileHeader>
           <div className=" ">
@@ -59,7 +81,11 @@ function Profilee() {
                         Current Balance
                       </div>
                       <div>
-                        <AiOutlineDollarCircle size={25} />
+                        {user.country == "India" ? (
+                          <HiOutlineCurrencyRupee size={25} />
+                        ) : (
+                          <AiOutlineDollarCircle size={25} />
+                        )}
                       </div>
                     </div>
                     <hr className="my-2" />
@@ -73,15 +99,22 @@ function Profilee() {
                           WebkitTextFillColor: "transparent",
                         }}
                       >
-                        $333
+                        {totalprice}
                       </div>
                     </div>
                   </div>
                   <div className="p-2 border w-[300px]  md:m-0 m-auto  ">
                     <div className="flex items-center justify-between">
-                      <div className="text-[#333] font-semibold text-[20px]">
-                        Rewards
+                      <div className="flex items-center text-[#333] font-semibold text-[20px]">
+                        Total Rewards &nbsp;({" "}
+                        {user.rewardcurrency == "INR" ? (
+                          <TbCurrencyRupee size={23} />
+                        ) : (
+                          <BiDollar size={23} />
+                        )}
+                        )
                       </div>
+
                       <div>
                         <GiDiamondTrophy size={25} />
                       </div>
@@ -97,7 +130,7 @@ function Profilee() {
                           WebkitTextFillColor: "transparent",
                         }}
                       >
-                        $100
+                        {user.reward}
                       </div>
                     </div>
                   </div>
