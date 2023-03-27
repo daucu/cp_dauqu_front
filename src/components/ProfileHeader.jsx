@@ -420,14 +420,7 @@ function ProfileHeader({ children }) {
             </NavLink>
             {/*  eighth Link */}
             <div className="p-2"></div>
-            <NavLink
-              to="/updatepswrd"
-              className={({ isActive }) =>
-                isActive
-                  ? "border-b-[2px] hover:bg-gray-300  bg-gray-200  px-6 py-2  border-[#05232A] flex items-center"
-                  : "flex items-center hover:bg-gray-200  px-6 py-2 "
-              }
-            >
+            <NavLink className="flex items-center hover:bg-gray-200  px-6 py-2 ">
               <div className="w-[40px]">
                 <FiPower size={20} />
               </div>
@@ -436,6 +429,7 @@ function ProfileHeader({ children }) {
                 style={{
                   width: `calc(100% - 40px)`,
                 }}
+                onClick={HandleLogout}
               >
                 Logout
               </div>
