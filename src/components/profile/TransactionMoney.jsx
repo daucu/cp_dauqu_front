@@ -50,9 +50,7 @@ function TransactionMoney() {
   return (
     <div>
       <div>
-        <div>
-          {/* <SecondHeader /> */}
-        </div>
+        <div>{/* <SecondHeader /> */}</div>
         <ProfileHeader>
           <div className="flex mt-8 items-center">
             <div className="bg-[#28C270]  w-[50px] h-[50px] flex rounded-md justify-center items-center ">
@@ -66,8 +64,8 @@ function TransactionMoney() {
           <div>
             <table className="w-full">
               <thead>
-                <tr>
-                  <th className="text-center">ID</th>
+                <tr className="md:mt-0 mt-2">
+                  <th className="lg:text-center">ID</th>
                   <th>Plan Slug</th>
                   <th>Purchase Date</th>
                   <th>Start Date</th>
@@ -82,8 +80,8 @@ function TransactionMoney() {
                 {transactions.map((item, index) => {
                   return (
                     <>
-                      <tr key={item.id}>
-                        <td data-column="Plan Slug" className="text-center">
+                      <tr key={item._id} className="md:mt-0 mt-6">
+                        <td data-column="#" className="lg:text-center">
                           {/* print 1,2,3 */}
                           {index + 1}
                         </td>
@@ -98,10 +96,10 @@ function TransactionMoney() {
                           {item.plan_expiry_date.split("T")[0]}
                         </td>
 
-                        <td data-column="Twitter" className="text-center">
+                        <td data-column="Amount" className="lg:text-center">
                           {item.product_price}
                         </td>
-                        <td data-column="Twitter">
+                        <td data-column="Type">
                           {item.product_price == 880
                             ? "Basic"
                             : item.product_price == 2320
@@ -110,8 +108,8 @@ function TransactionMoney() {
                             ? "Premium"
                             : null}
                         </td>
-                        <td data-column="Twitter">{item.city}</td>
-                        <td data-column="Twitter">
+                        <td data-column="Location">{item.city}</td>
+                        <td data-column="Status">
                           {item.payment_Status == "success" ? (
                             <div className="bg-green-400 text-white p-2 text-center rounded-3xl">
                               Active
