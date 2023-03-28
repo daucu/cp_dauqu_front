@@ -1,16 +1,33 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import ProfileHeader from "../ProfileHeader";
 import SecondHeader from "../SecondHeader";
+import { GIT_API } from "./ConstantTwo";
 
 function Github() {
+  const [apps, setApps] = useState([]);
+  async function GetAllApps() {
+    //Get request to backend to check if user is logged in
+    await axios
+      .get(`${GIT_API}/get-my-repos`)
+      .then((res) => {
+        console.log(res.data);
+        setApps(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+  useEffect(() => {
+    GetAllApps();
+  }, []);
   return (
     <div>
-      <div>
-        {/* <SecondHeader /> */}
-      </div>
+      <div>{/* <SecondHeader /> */}</div>
       <ProfileHeader>
-        <div className="flex flex-col md:p-32 p-8 justify-center items-center w-full   ">
-          <div className="w-[150px] h-[150px]">
+        <div className="w-full">
+          <div className="font-semibold text-[20px] mt-4">Repository List</div>
+          {/* <div className="w-[150px] h-[150px]">
             <img
               src="https://cdn-icons-png.flaticon.com/512/1409/1409819.png"
               className="w-[100%] h-[100%]"
@@ -24,7 +41,7 @@ function Github() {
           </div>
           <div className="md:text-gray-600 font-bold md:text-[22px] text-[17px] md:mt-8">
             We will notify you....
-          </div>
+          </div> */}
         </div>
       </ProfileHeader>
     </div>

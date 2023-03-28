@@ -90,27 +90,27 @@ function TransactionMoney() {
                   {transactions.map((item, index) => {
                     return (
                       <>
-                        <tr key={item._id} className="md:mt-0 mt-6">
-                          <td data-column="#" className="lg:text-center">
+                        <tr key={item._id} className="md:mt-0 mt-6 ">
+                          <td data-column="#" className="lg:text-center border border-gray-300">
                             {/* print 1,2,3 */}
                             {index + 1}
                           </td>
-                          <td data-column="Plan Slug">{item.product_slug}</td>
-                          <td data-column="Purchase Date">
+                          <td data-column="Plan Slug" className="border border-gray-300">{item.product_slug}</td>
+                          <td data-column="Purchase Date" className="border border-gray-300">
                             {item.date.split("T")[0]}
                           </td>
-                          <td data-column="Start Date">
+                          <td data-column="Start Date" className="border border-gray-300">
                             {item.plan_start_date.split("T")[0]}
                           </td>
-                          <td data-column="Expiry Date">
+                          <td data-column="Expiry Date" className="border border-gray-300">
                             {item.plan_expiry_date.split("T")[0]}
                           </td>
 
-                          <td data-column="Amount" className="lg:text-center">
+                          <td data-column="Amount" className="lg:text-center border border-gray-300">
                             {item.currencyType == "INR" ? "₹" : "$"}
                             {item.product_price}
                           </td>
-                          <td data-column="Type">
+                          <td data-column="Type" className="border border-gray-300">
                             {item.product_price == 880
                               ? "Basic"
                               : item.product_price == 2320
@@ -119,8 +119,8 @@ function TransactionMoney() {
                               ? "Premium"
                               : null}
                           </td>
-                          <td data-column="Location">{item.city}</td>
-                          <td data-column="Status">
+                          <td data-column="Location" className="border border-gray-300">{item.city}</td>
+                          <td data-column="Status" className="border border-gray-300">
                             {item.payment_Status == "success" ? (
                               <div className="bg-green-400 text-white p-2 text-center rounded-3xl">
                                 Active

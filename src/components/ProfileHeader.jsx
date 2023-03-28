@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import SecondHeader from "./SecondHeader";
 import "../assets/css/profileheader.css";
 import { Link, NavLink, useNavigate } from "react-router-dom";
-import { CgProfile } from "react-icons/cg";
+import { CgMenu, CgProfile } from "react-icons/cg";
 import { FiGithub, FiPower } from "react-icons/fi";
 import { RiMoneyDollarCircleLine, RiSecurePaymentLine } from "react-icons/ri";
 import { BiCodeCurly } from "react-icons/bi";
@@ -10,6 +10,8 @@ import { GrClose, GrMenu, GrTransaction } from "react-icons/gr";
 import { MdOutlineSecurity } from "react-icons/md";
 import { IoIosNotificationsOutline } from "react-icons/io";
 import { ImUserTie } from "react-icons/im";
+import { FiLogOut } from "react-icons/fi";
+import { AiOutlineClose } from "react-icons/ai";
 import axios from "axios";
 import { API } from "./Constant";
 import { toast } from "react-toastify";
@@ -64,46 +66,67 @@ function ProfileHeader({ children }) {
   };
   return (
     <div>
-      <div className="flex justify-between shadow-md px-6 py-3 items-center">
-        <Link to="/">
-          <div className="font-bold text-black text-[20px]">Dauqu</div>
-        </Link>
+      <div className="flex justify-between bg-[#1E293B] shadow-md px-6 py-3 items-center">
         <div className="flex items-center">
-          <div className="cursor-pointer" onClick={HandleAlert}>
-            <IoIosNotificationsOutline size={25} />
-          </div>
-          <div className="hiddenMenuBtn flex   justify-end">
+          <div className="hiddenMenuBtn mr-4  ">
             {active ? (
               <button onClick={() => setActive(false)}>
-                <GrClose className="text-[#4614B9]" size={20} />
+                <AiOutlineClose
+                  className="text-white"
+                  color="white"
+                  size={16}
+                />
               </button>
             ) : (
               <button onClick={() => setActive(true)}>
-                <GrMenu className="text-[#4614B9]" size={20} />
+                <CgMenu className="text-white" color="white" size={16} />
               </button>
             )}
+          </div>
+          <Link to="/">
+            <div className="font-bold text-white text-[20px]">Dauqu</div>
+          </Link>
+        </div>
+        <div className="flex items-center">
+          <div className="cursor-pointer" onClick={HandleAlert}>
+            <IoIosNotificationsOutline className="text-white" size={25} />
+          </div>
+          <div className="ml-4 w-[35px] cursor-pointer h-[35px] bg-slate-300 rounded-full flex justify-center items-center">
+            <img
+              src="https://faces-img.xcdn.link/image-lorem-face-5660.jpg"
+              className="w-[100%] h-[100%] rounded-full"
+              alt="img"
+            />
           </div>
         </div>
       </div>
       <div className="  maincont ">
         <div className="leftcont h-screen   border-2">
           {/* first link */}
+
           <div className="p-2"></div>
           <NavLink
             to="/profilee"
+            // className={({ isActive }) =>
+            //   isActive
+            //     ? "btn rounded-none border-b-[2px] hover:bg-gray-300   px-6 py-2  border-[#05232A] flex items-center"
+            //     : "btn rounded-none flex items-center hover:bg-gray-200  px-6 py-2"
+            // }
+
             className={({ isActive }) =>
               isActive
-                ? "border-b-[2px] hover:bg-gray-300  bg-gray-200 px-6 py-2  border-[#05232A] flex items-center"
-                : "flex items-center hover:bg-gray-200  px-6 py-2 "
+                ? "btn btn-sm w-full  rounded-none flex items-center justify-start"
+                : "btn-sm flex w-full  rounded-none font-semibold uppercase   items-center justify-start "
             }
           >
-            <div className="w-[40px]">
+            <div className="w-[40px] ">
               <CgProfile size={20} />
             </div>
             <div
-              className="text-[18px] "
+              className="  "
               style={{
                 width: `calc(100% - 40px)`,
+                textAlign: "left",
               }}
             >
               Profile
@@ -115,17 +138,18 @@ function ProfileHeader({ children }) {
             to="/github"
             className={({ isActive }) =>
               isActive
-                ? "border-b-[2px] hover:bg-gray-300  bg-gray-200  px-6 py-2  border-[#05232A] flex items-center"
-                : "flex items-center hover:bg-gray-200  px-6 py-2 "
+                ? "btn btn-sm w-full  rounded-none flex items-center justify-start"
+                : "btn-sm flex w-full  rounded-none font-semibold uppercase   items-center justify-start "
             }
           >
             <div className="w-[40px]">
               <FiGithub size={20} />
             </div>
             <div
-              className="text-[18px] "
+              className=" "
               style={{
                 width: `calc(100% - 40px)`,
+                textAlign: "left",
               }}
             >
               Github
@@ -137,17 +161,18 @@ function ProfileHeader({ children }) {
             to="/subscibe"
             className={({ isActive }) =>
               isActive
-                ? "border-b-[2px] hover:bg-gray-300  bg-gray-200  px-6 py-2  border-[#05232A] flex items-center"
-                : "flex items-center hover:bg-gray-200  px-6 py-2 "
+                ? "btn btn-sm w-full  rounded-none flex items-center justify-start"
+                : "btn-sm flex w-full  rounded-none font-semibold uppercase   items-center justify-start "
             }
           >
             <div className="w-[40px]">
               <RiMoneyDollarCircleLine size={20} />
             </div>
             <div
-              className="text-[18px] "
+              className=" "
               style={{
                 width: `calc(100% - 40px)`,
+                textAlign: "left",
               }}
             >
               Subscriptions
@@ -159,17 +184,18 @@ function ProfileHeader({ children }) {
             to="/domains"
             className={({ isActive }) =>
               isActive
-                ? "border-b-[2px] hover:bg-gray-300  bg-gray-200  px-6 py-2  border-[#05232A] flex items-center"
-                : "flex items-center hover:bg-gray-200  px-6 py-2 "
+                ? "btn btn-sm w-full  rounded-none flex items-center justify-start"
+                : "btn-sm flex w-full  rounded-none font-semibold uppercase   items-center justify-start "
             }
           >
             <div className="w-[40px]">
               <BiCodeCurly size={20} />
             </div>
             <div
-              className="text-[18px] "
+              className=" "
               style={{
                 width: `calc(100% - 40px)`,
+                textAlign: "left",
               }}
             >
               Domains
@@ -181,17 +207,18 @@ function ProfileHeader({ children }) {
             to="/transmoney"
             className={({ isActive }) =>
               isActive
-                ? "border-b-[2px] hover:bg-gray-300  bg-gray-200  px-6 py-2  border-[#05232A] flex items-center"
-                : "flex items-center hover:bg-gray-200  px-6 py-2 "
+                ? "btn btn-sm w-full  rounded-none flex items-center justify-start"
+                : "btn-sm flex w-full  rounded-none font-semibold uppercase   items-center justify-start "
             }
           >
             <div className="w-[40px]">
               <GrTransaction size={20} />
             </div>
             <div
-              className="text-[18px] "
+              className=" "
               style={{
                 width: `calc(100% - 40px)`,
+                textAlign: "left",
               }}
             >
               Transaction
@@ -203,17 +230,18 @@ function ProfileHeader({ children }) {
             to="/invoice"
             className={({ isActive }) =>
               isActive
-                ? "border-b-[2px] hover:bg-gray-300  bg-gray-200  px-6 py-2  border-[#05232A] flex items-center"
-                : "flex items-center hover:bg-gray-200  px-6 py-2 "
+                ? "btn btn-sm w-full  rounded-none flex items-center justify-start"
+                : "btn-sm flex w-full  rounded-none font-semibold uppercase   items-center justify-start "
             }
           >
             <div className="w-[40px]">
               <RiSecurePaymentLine size={20} />
             </div>
             <div
-              className="text-[18px] "
+              className=" "
               style={{
                 width: `calc(100% - 40px)`,
+                textAlign: "left",
               }}
             >
               Invoice
@@ -225,62 +253,64 @@ function ProfileHeader({ children }) {
             to="/updatepswrd"
             className={({ isActive }) =>
               isActive
-                ? "border-b-[2px] hover:bg-gray-300  bg-gray-200  px-6 py-2  border-[#05232A] flex items-center"
-                : "flex items-center hover:bg-gray-200  px-6 py-2 "
+                ? "btn btn-sm w-full  rounded-none flex items-center justify-start"
+                : "btn-sm flex w-full  rounded-none font-semibold uppercase   items-center justify-start "
             }
           >
             <div className="w-[40px]">
               <MdOutlineSecurity size={20} />
             </div>
             <div
-              className="text-[18px] "
+              className=" "
               style={{
                 width: `calc(100% - 40px)`,
+                textAlign: "left",
               }}
             >
               Security
             </div>
           </NavLink>
+          <div className="p-2"></div>
+          <NavLink
+            onClick={HandleLogout}
+            className="btn-sm flex w-full  rounded-none font-semibold uppercase   items-center justify-start "
+          >
+            <div className="w-[40px]">
+              <FiLogOut size={20} />
+            </div>
+            <div
+              className=" "
+              style={{
+                width: `calc(100% - 40px)`,
+                textAlign: "left",
+              }}
+            >
+              Logout
+            </div>
+          </NavLink>
           {/*  eigth Link */}
           <div className="p-2"></div>
-          <div className="    px-6 py-2 ">
-            <button
-              className="flex  items-center cursor-pointer"
-              onClick={HandleLogout}
-            >
-              <div className="w-[40px]">
-                <FiPower size={20} />
-              </div>
-              <div
-                className="text-[18px] "
-                style={{
-                  width: `calc(100% - 40px)`,
-                }}
-              >
-                Logout
-              </div>
-            </button>
-          </div>
         </div>
         {active ? (
-          <div className="hiddendiv fixed shadow-2xl z-10 h-screen top-[65px] p-4 animate-slide_right">
+          <div className="hiddendiv fixed shadow-2xl z-10 h-screen top-[65px]  animate-slide_right">
             {/* first link */}
             <div className="p-2"></div>
             <NavLink
               to="/profilee"
               className={({ isActive }) =>
                 isActive
-                  ? "border-b-[2px] hover:bg-gray-300  bg-gray-200  px-6 py-2  border-[#05232A] flex items-center"
-                  : "flex items-center hover:bg-gray-200  px-6 py-2 "
+                  ? "btn btn-sm w-full  rounded-none flex items-center justify-start"
+                  : "btn-sm flex w-full  rounded-none font-semibold uppercase   items-center justify-start "
               }
             >
               <div className="w-[40px]">
                 <CgProfile size={20} />
               </div>
               <div
-                className="text-[18px] "
+                className=" "
                 style={{
                   width: `calc(100% - 40px)`,
+                  textAlign: "left",
                 }}
               >
                 Profile
@@ -292,17 +322,18 @@ function ProfileHeader({ children }) {
               to="/github"
               className={({ isActive }) =>
                 isActive
-                  ? "border-b-[2px] hover:bg-gray-300  bg-gray-200  px-6 py-2  border-[#05232A] flex items-center"
-                  : "flex items-center hover:bg-gray-200  px-6 py-2 "
+                  ? "btn btn-sm w-full  rounded-none flex items-center justify-start"
+                  : "btn-sm flex w-full  rounded-none font-semibold uppercase   items-center justify-start "
               }
             >
               <div className="w-[40px]">
                 <FiGithub size={20} />
               </div>
               <div
-                className="text-[18px] "
+                className=" "
                 style={{
                   width: `calc(100% - 40px)`,
+                  textAlign: "left",
                 }}
               >
                 Github
@@ -314,17 +345,18 @@ function ProfileHeader({ children }) {
               to="/subscibe"
               className={({ isActive }) =>
                 isActive
-                  ? "border-b-[2px] hover:bg-gray-300  bg-gray-200  px-6 py-2  border-[#05232A] flex items-center"
-                  : "flex items-center hover:bg-gray-200  px-6 py-2 "
+                  ? "btn btn-sm w-full  rounded-none flex items-center justify-start"
+                  : "btn-sm flex w-full  rounded-none font-semibold uppercase   items-center justify-start "
               }
             >
               <div className="w-[40px]">
                 <RiMoneyDollarCircleLine size={20} />
               </div>
               <div
-                className="text-[18px] "
+                className=" "
                 style={{
                   width: `calc(100% - 40px)`,
+                  textAlign: "left",
                 }}
               >
                 Subscriptions
@@ -336,17 +368,18 @@ function ProfileHeader({ children }) {
               to="/domains"
               className={({ isActive }) =>
                 isActive
-                  ? "border-b-[2px] hover:bg-gray-300  bg-gray-200  px-6 py-2  border-[#05232A] flex items-center"
-                  : "flex items-center hover:bg-gray-200  px-6 py-2 "
+                  ? "btn btn-sm w-full  rounded-none flex items-center justify-start"
+                  : "btn-sm flex w-full  rounded-none font-semibold uppercase   items-center justify-start "
               }
             >
               <div className="w-[40px]">
                 <BiCodeCurly size={20} />
               </div>
               <div
-                className="text-[18px] "
+                className=" "
                 style={{
                   width: `calc(100% - 40px)`,
+                  textAlign: "left",
                 }}
               >
                 Domains
@@ -358,17 +391,18 @@ function ProfileHeader({ children }) {
               to="/transmoney"
               className={({ isActive }) =>
                 isActive
-                  ? "border-b-[2px] hover:bg-gray-300  bg-gray-200  px-6 py-2  border-[#05232A] flex items-center"
-                  : "flex items-center hover:bg-gray-200  px-6 py-2 "
+                  ? "btn btn-sm w-full  rounded-none flex items-center justify-start"
+                  : "btn-sm flex w-full  rounded-none font-semibold uppercase   items-center justify-start "
               }
             >
               <div className="w-[40px]">
                 <GrTransaction size={20} />
               </div>
               <div
-                className="text-[18px] "
+                className=" "
                 style={{
                   width: `calc(100% - 40px)`,
+                  textAlign: "left",
                 }}
               >
                 Transaction
@@ -380,17 +414,18 @@ function ProfileHeader({ children }) {
               to="/invoice"
               className={({ isActive }) =>
                 isActive
-                  ? "border-b-[2px] hover:bg-gray-300  bg-gray-200  px-6 py-2  border-[#05232A] flex items-center"
-                  : "flex items-center hover:bg-gray-200  px-6 py-2 "
+                  ? "btn btn-sm w-full  rounded-none flex items-center justify-start"
+                  : "btn-sm flex w-full  rounded-none font-semibold uppercase   items-center justify-start "
               }
             >
               <div className="w-[40px]">
                 <RiSecurePaymentLine size={20} />
               </div>
               <div
-                className="text-[18px] "
+                className=" "
                 style={{
                   width: `calc(100% - 40px)`,
+                  textAlign: "left",
                 }}
               >
                 Invoice
@@ -402,17 +437,18 @@ function ProfileHeader({ children }) {
               to="/updatepswrd"
               className={({ isActive }) =>
                 isActive
-                  ? "border-b-[2px] hover:bg-gray-300  bg-gray-200  px-6 py-2  border-[#05232A] flex items-center"
-                  : "flex items-center hover:bg-gray-200  px-6 py-2 "
+                  ? "btn btn-sm w-full  rounded-none flex items-center justify-start"
+                  : "btn-sm flex w-full  rounded-none font-semibold uppercase   items-center justify-start "
               }
             >
               <div className="w-[40px]">
                 <MdOutlineSecurity size={20} />
               </div>
               <div
-                className="text-[18px] "
+                className=" "
                 style={{
                   width: `calc(100% - 40px)`,
+                  textAlign: "left",
                 }}
               >
                 Security
@@ -420,16 +456,19 @@ function ProfileHeader({ children }) {
             </NavLink>
             {/*  eighth Link */}
             <div className="p-2"></div>
-            <NavLink className="flex items-center hover:bg-gray-200  px-6 py-2 ">
+            <NavLink
+              onClick={HandleLogout}
+              className="btn-sm flex w-full  rounded-none font-semibold uppercase   items-center justify-start "
+            >
               <div className="w-[40px]">
                 <FiPower size={20} />
               </div>
               <div
-                className="text-[18px]  "
+                className="  "
                 style={{
                   width: `calc(100% - 40px)`,
+                  textAlign: "left",
                 }}
-                onClick={HandleLogout}
               >
                 Logout
               </div>
