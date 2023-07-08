@@ -47,7 +47,7 @@ function Header() {
   const [copied, setcopied] = useState(false);
   const copyToClipboard = () => {
     navigator.clipboard.writeText(
-      `curl -o latest -L https://install.dauqu.com/install && sh latest`
+      `curl -o latest -L https://get.dauqu.com/install && sh latest`
     );
     setcopied(true);
   };
@@ -230,7 +230,7 @@ function Header() {
                   <div className="lg:mt-4 xl:mt-6 elementLink text-center bg-slate-200 p-[4px] w-auto overflow-x-hidden">
                     <input
                       className="w-[342px] outline-none"
-                      value="curl -o latest -L https://install.dauqu.com/install && sh latest"
+                      value="curl -o latest -L https://get.dauqu.com/install && sh latest"
                       readOnly
                     />
                   </div>
